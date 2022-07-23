@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+    Login
+{% endblock  %}
+{% block content %}
+
+<h1>Login</h1>    
+{% if form.errors %}
+<p>
+Your username and password didn't match.
+Please try again.
+</p>
+{% else %}
+<p>Please, use the following form to log-in:</p>
+{% endif %}
+<div class="login-form">
+<form action="{% url 'login' %}" method="post">
+
+{% csrf_token %}
+{{ form.username.label }}
+<style>
+    .username [type = text] {
+            border : 5px solid pink;
+    }
+    .usernam {
+        border : none;
+    }
+</style>
+<div class="username">{{ form.username }}</div>
+
+<br>
+<br>
+{{ form.password.label }}
+{{ form.password }}
+<!-- This next stores the page which we wanted to visit which required login -->
+<input type="hidden" name="next" value="{{ next }}" />
+<p><input type="submit" value="Log-in"></p>
+</form>
+</div>
+
+{% endblock content %}
