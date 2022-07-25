@@ -4,6 +4,20 @@
 {% endblock  %}
 {% block content %}
 
+
+
+
+{% if request.user.is_authenticated %}
+
+
+<h1>You are logged in</h1>
+<p>
+
+You can return <a href="{% url 'index' %}">Home</a>.
+</p>
+
+
+{% else %}
 <h1>Login</h1>    
 {% if form.errors %}
 <p>
@@ -16,26 +30,32 @@ Please try again.
 <div class="login-form">
 <form action="{% url 'login' %}" method="post">
 
-{% csrf_token %}
-{{ form.username.label }}
-<style>
-    .username [type = text] {
-            border : 5px solid pink;
-    }
-    .usernam {
-        border : none;
-    }
-</style>
-<div class="username">{{ form.username }}</div>
+    {% csrf_token %}
+    {{ form.username.label }}
+    <style>
+        .username [type = text] {
+                border : 5px solid pink;
+        }
+        .usernam {
+            border : none;
+        }
+    </style>
+    <div class="username">{{ form.username }}</div>
+    
+    <br>
+    <br>
+    {{ form.password.label }}
+    {{ form.password }}
+    <!-- This next stores the page which we wanted to visit which required login -->
+    <input type="hidden" name="next" value="{{ next }}" />
+    <p><input type="submit" value="Log-in"></p>
+    </form>
+    </div>
+    <p>New Here? <a href="{% url 'register' %}">Register</a></p>
+    <p><a href="{% url 'password_reset' %}">Forgotten your password?</a></
+        p>
 
-<br>
-<br>
-{{ form.password.label }}
-{{ form.password }}
-<!-- This next stores the page which we wanted to visit which required login -->
-<input type="hidden" name="next" value="{{ next }}" />
-<p><input type="submit" value="Log-in"></p>
-</form>
-</div>
+{% endif %}
 
 {% endblock content %}
+
