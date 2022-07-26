@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }}{% endblock %}\
+
+{% block content %}
+
+<h1>{{ post.title }}</h1>
+<p class="date">
+Published {{ post.publish }} by {{ post.author }}
+</p>
+{{ post.body|linebreaks }}
+
+{% with comment.count as total_comments %}
+<h2>
+    {{ total_comments }} comment {{ total_comments | pluralize }}
+</h2>
+{% endwith %}
+
+{% for comment in comments %}
+<div class="comment">
+    <p class="info">
+        <!-- for loop counter contains loop counter in each iteration -->
+    Comment {{ forloop.counter }} by {{ comment.name }}
+    {{ comment.created }}
+    </p>        
+    {{ comment.body|linebreaks }}
+    </div>
+    {% empty %}
+    <p>There are no comments yet.</p>
+    {% endfor %}
+{% if new_comment %}
+<h2>Your comment has been added.</h2>
+{% else %}
+<h2>Add a new comment</h2>
+{% if user.is_authenticated %}
+<form method="post">
+    {% csrf_token %}
+    <input type="textarea" name = "body">
+    <input type="hidden" value = "{{user.username}}"  name = "uname">
+    <input  type="hidden" value = "{{ user.email }}" name = 'email'>
+    <p><input type="submit" value="Add comment"></p>
+    </form>
+
+        
+    {% else %}
+        <p>Pleas <a href="{% url 'login' %}?next={{ post.get_absolute_url }}">login</a> to comment</p>
+
+{% endif %}
+
+{% endif %}
+
+{% endblock %}

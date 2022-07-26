@@ -23,7 +23,11 @@ path('reset/done/',
 auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'),
 name='password_reset_complete'),
 
-path('register/',views.register,name='register')
+path('register/',views.register,name='register'),
 
+#posts views
+path('<int:year>/<int:month>/<int:day>/<slug:post>/',
+views.post_detail,
+name='post_detail'),
 
 ]

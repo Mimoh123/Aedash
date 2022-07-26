@@ -2,6 +2,7 @@ from logging import PlaceHolder
 from django.contrib.auth.forms import PasswordResetForm
 from django import forms
 from django.contrib.auth.models import User
+from .models import Comment
 # from captcha.fields import CaptchaField
 
 #for captcha fields later
@@ -30,3 +31,9 @@ class UserRegistrationForm(forms.ModelForm):
         if cd['password'] != cd['password2']:
             raise forms.ValidationError('Passwords dont\'t match.')
         return cd['password2']
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('body',)
