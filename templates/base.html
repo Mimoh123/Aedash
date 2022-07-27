@@ -4,6 +4,7 @@
 <head>
 <title>{% block title %}{% endblock %}</title>
 <link href="{% static 'css/base.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 {% block style %}
 <style>
@@ -19,14 +20,15 @@
 <body>
    <!-- <p>{{ request.path }}</p> -->
     <div class="header">
+        <p  class = 'text-purple-600 text-xl '>This is my blog</p>
         {% if request.user.is_authenticated %}
-        Hello {{ request.user.username }},
-        <a href="{% url 'logout' %}">Logout</a>
+    Hello {{ request.user.username }},  
+        <a class="text-red-500" href="{% url 'logout' %}">Logout</a>
         {% else %}  
         {% if request.path == '/login/' %}
        <a href="/"> Home</a>
         {% else %}
-        <a href="{% url 'login' %}">Log-in</a> or <a href="{% url 'register' %}">Register</a>
+        <a class="text-blue-500" href="{% url 'login' %}">Log-in</a> or <a class="text-blue-500" href="{% url 'register' %}">Register</a>
         {% endif %}
         {% endif %}
     </div>

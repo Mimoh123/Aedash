@@ -56,7 +56,7 @@ def post_detail(request,year,month,day,post):
     comments = post.comments.filter(active = True)
 
     new_comment= None
-    path_to_
+    # path_to_
     if request.method == "POST":
         # A comment was posted
         username = request.POST['uname']

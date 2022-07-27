@@ -1,21 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
     Home
 {% endblock title %}
+
 {% block content %}
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
     <a href="{% url 'locked' %}">Click</a>
     <h1>My Blog</h1>
 {% for post in posts %}
 <h2>
-<a href="{{ post.get_absolute_url }}">
+<a  class="text-purple-500" href="{{ post.get_absolute_url }}">
 {{ post.title }}
 </a>
 </h2>
 <p class="date">
 Published {{ post.publish }} by {{ post.author }}
 </p>    
-{{ post.body|truncatewords:30|linebreaks }}
 
+<p  class="text-blue-800" >  {{ post.body|truncatewords:30|linebreaks }}</p>
 {% endfor %}
 <br>
 <br>
