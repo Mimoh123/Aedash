@@ -5,101 +5,182 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <h1 class ="text-xl text-red-500">Aadarsh baral</h1>
-    <h1 class ="text-xl text-red-200">Aadarsh baral</h1>
-    <h1 class ="text-xl text-red-100">Aadarsh baral</h1>
-    <h1 class ="text-xl text-center  text-pink-700">Aadarsh baral</h1>
-    <button class="btn-primary">Click</button>
-    <div class="shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-800 w-64 m-auto">
-    <div class="w-full h-full text-center">
-        <div class="flex h-full flex-col justify-between">
-            <svg width="40" height="40" class="mt-4 w-12 h-12 m-auto text-indigo-500" fill="currentColor" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                <path d="M704 1376v-704q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23zm256 0v-704q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23zm256 0v-704q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23zm-544-992h448l-48-117q-7-9-17-11h-317q-10 2-17 11zm928 32v64q0 14-9 23t-23 9h-96v948q0 83-47 143.5t-113 60.5h-832q-66 0-113-58.5t-47-141.5v-952h-96q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h309l70-167q15-37 54-63t79-26h320q40 0 79 26t54 63l70 167h309q14 0 23 9t9 23z">
-                </path>
-            </svg>
-            <p class="text-gray-800 dark:text-gray-200 text-xl font-bold mt-4">
-                Remove card
-            </p>
-            <p class="text-gray-600 dark:text-gray-400 text-xs py-2 px-6">
-                Are you sure you want to delete this card ?
-            </p>
-            <div class="flex items-center justify-between gap-4 w-full mt-8">
-                <button type="button" class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                    Delete
-                </button>
-                <button type="button" class="py-2 px-4  bg-white hover:bg-gray-100 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-indigo-500 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                    Cancel
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="w-72 bg-white rounded-lg shadow-md p-6">
-    <div class="w-16 mx-auto relative -mt-10 mb-3">
-        <img class="-mt-1" src="/icons/cookie.svg" alt="cookie"/>
-    </div>
-    <span class="w-full sm:w-48  block leading-normal text-gray-800 text-md mb-3">
-        We care about your data, and we&#x27;d love to use cookies to make your experience better.
-    </span>
-    <div class="flex items-center justify-between">
-        <a class="text-xs text-gray-400 mr-1 hover:text-gray-800" href="#">
-            Privacy Policy
-        </a>
-        <div class="w-1/2">
-            <button type="button" class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                See more
-            </button>
-        </div>
-    </div>
-</div>
-<!-- component -->
-<body class="antialiased bg-slate-200">
-    <div class="max-w-lg mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300">
-        <h1 class="text-4xl font-medium">Login</h1>
-        <p class="text-slate-500">Hi, Welcome back 👋</p>
+    <link rel="stylesheet" href="./style.css">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"> 
+    <script>
+        
+    </script>
+<style>
+body{
+    font-family:  'Poppins','sans-serif';
+    background-image: repeating-linear-gradient(-45deg, rgba(238, 255, 239, 0.25), rgba(12, 138, 35, 0.25) 1px, transparent 1px, transparent 6px);
+background-size: 4px 4px;
+z-index: 1000;
+}
 
-        <div class="my-5">
-            <button class="w-full text-center py-3 my-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150">
-                <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-6 h-6" alt=""> <span>Login with Google</span>
-            </button>
-        </div>
-        <form action="" class="my-10">
-            <div class="flex flex-col space-y-5">
-                <label for="email">
-                    <p class="font-medium text-slate-700 pb-2">Email address</p>
-                    <input id="email" name="email" type="email" class="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Enter email address">
-                </label>
-                <label for="password">
-                    <p class="font-medium text-slate-700 pb-2">Password</p>
-                    <input id="password" name="password" type="password" class="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Enter your password">
-                </label>
-                <div class="flex flex-row justify-between">
-                    <div>
-                        <label for="remember" class="">
-                            <input type="checkbox" id="remember" class="w-4 h-4 border-slate-200 focus:bg-indigo-600">
-                            Remember me
-                        </label>
-                    </div>
-                    <div>
-                        <a href="#" class="font-medium text-indigo-600">Forgot Password?</a>
-                    </div>
-                </div>
-                <button class="w-full py-3 font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
-                      </svg>
-                      <span>Login</span>
-                </button>
-                <p class="text-center">Not registered yet? <a href="#" class="text-indigo-600 font-medium inline-flex space-x-1 items-center"><span>Register now </span><span><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg></span></a></p>
-            </div>
+
+    .search-h{
+        display:block;
+    }
+    .search-form {
+        display:block;
+    }
+    @media (max-width : 768px) {
+        .search-form {
+            display:none;
+        }
+      
+    }
+    @media (min-width : 768px) {
+        .search-h {
+            display:none;
+        }
+      
+    }
+    @media (max-width : 500px) {
+        .navitem {
+            display:none;
+        }
+    .fa-bars{
+        font-size: 30px;
+    }
+    .logo {
+        font-size: 25px;
+    
+    }
+    }
+    
+.navitem{
+    padding: 0px 10px 0px 10px;
+}
+li{
+    list-style: none;
+}
+</style>
+</head>
+
+<body class = 'bg-slate-50 dark:bg-slate-800'>
+    <div class="nav-container  h-auto">
+    <div class=" max-w-[90%]  lg:max-w-[80%] m-auto   ">
+
+    
+
+    <!-- Navbar starts here!!!! -->
+    <!-- Navbar starts here!!!! -->
+    <!-- Navbar starts here!!!! -->
+    <!-- Navbar starts here!!!! -->
+    <!-- Navbar starts here!!!! -->
+    <div class = ' '>
+        
+   <div class="pt-5 pb-5 navbar flex flex-row justify-between items-center m-auto">
+    <div class="logo-bars flex flex-row items-center justify-start ">
+       <p class="dark:text-white nav-item"><i class =' fa fa-bars fa-2xl'></i></p>
+       <p style="font-family: 'Arvo', serif;" class="dark:text-white text-3xl nav-item ml-5 border-2 border-black dark:border-white text-green-400 p-1 logo " >Aedash</p>
+       
+       <p class="dark:text-white sun toggler nav-item ml-5"><i class="fa-solid fa-sun  fa-xl"></i></p>
+       <p class="dark:text-white moon  nav-item ml-5"><i class="fa-regular fa-moon fa-xl"></i></p>
+    </div>
+    <div class="navlists flex flex-row justify-start items-center">
+        <p class="dark:text-white nav-item search-h "><i class="fa fa-search fa-xl"></i></p>
+        <div class="border-2 p border-green-300 rounded form-elem">
+        <form class = 'search-form selection:hidden'action="">
+            <input class="focus:outline-none border-2 rounded-md border-none bg-transparent text-black dark:text-white w-[200px]" type="text">
+            <button class="bg-green-300 p-1" type="submit"><i class="dark:text-black fa fa-search  fa-xl"></i></button>
         </form>
     </div>
-    
-</body>
+   
+    <li class="dark:text-white text-xl navitem">Login</li>
+    <li class="dark:text-white btn-primary text-xl       navitem">Register</li>
+    </ul>
+   </div>
+</div>
+</div>
+
+<!-- Navbar ends here -->
+<!-- Navbar ends here -->
+<!-- Navbar ends here -->
+<!-- Navbar ends here -->
+<!-- Navbar ends here -->
+
+
+
+<!-- landingpage starts here -->
+<div class="landing-page flex flex-col sm:flex-col md:flex-row sm:h-[80vh] lg:h-[85vh] justify-evenly items-center mob:text-center mob:h-[100vh] scr-fix:text-center scr-fix:h-[100vh]">
+
+<div class="my-info-container">
+
+    <div class="info-heading">
+        <h1 style="font-family: 'Poppins', sans-serif; font-weight : 700" class="info-header dark:text-white text-4xl lg:text-6xl">Hi Kind People of The Internet</h1>
+        <!-- <br> -->
+        <p class="dark:text-white mt-2 text-xl">Me - Aedash , Welcome To My Blog</p>
+        <button class="btn-p mt-2 text-xl">Explore</button>
+    </div>
+
+
+</div>
+<div class="svg-container">
+
+<img class = "fill-white  w-[300px] sm:w-[400px] md:w-[400px] lg:w-[500px] h-auto"  src="../images/landing-animate.svg"  alt="">
+
+</div>
+</div>
+</div>
+
+<!-- landing page ends here  -->
+<!-- landing page ends here  -->
+<!-- landing page ends here  -->
+<!-- landing page ends here  -->
+
+<br>
+
+
+<div class="blog-container max-w-[1200px] m-auto">
+  
+    <section class="flex flex-col justify-center antialiased  dark:text-white text-black  min-h-[200px]  ">
+        <div class="max-w-6xl mx-auto p-4 sm:px-6 h-full dark:bg-[rgba(24,27,58,0.36)] rounded-[20px]">
+            <!-- Blog post -->
+            <article class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
+                <a class="block group" href="#0">
+                 
+                        <img class=" w-full h-full object-cover " src="https://preview.cruip.com/open-pro/images/blog-post-01.jpg" width="540" height="303" alt="Blog post">
+                    </figure>
+                </a>
+                <div>
+                    <header>
+                        <div class="mb-3">
+                            <ul class="flex flex-wrap text-xs font-medium -m-1">
+                                <li class="m-1">
+                                    <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out" href="#0">Product</a>
+                                </li>
+                                <li class="m-1">
+                                    <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Engineering</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
+                            <a class="hover:text-gray-100 transition duration-150 ease-in-out" href="#0">Designing a functional workflow at home.</a>
+                        </h3>
+                    </header>
+                    <p class="text-lg text-gray-400 flex-grow">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.</p>
+             
+                </div>
+            </article>    
+        </div>
+
+    <!-- More components -->
+  
+  </div>
+
+
+</div>
+
+</div>
+<!-- footer -->
+
+<script src="https://kit.fontawesome.com/f515549239.js" crossorigin="anonymous"></script>
+
+<script src="./script.js" ></script>
 </body>
 </html>
