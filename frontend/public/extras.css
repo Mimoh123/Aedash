@@ -1,0 +1,45 @@
+body{
+    font-family:  'Poppins','sans-serif';
+    background-image: repeating-linear-gradient(-45deg, rgba(238, 255, 239, 0.25), rgba(12, 138, 35, 0.25) 1px, transparent 1px, transparent 6px);
+background-size: 4px 4px;
+z-index: 1000;
+}
+
+
+    .search-h{
+        display:block;
+    }
+    .search-form {
+        display:block;
+    }
+    @media (max-width : 768px) {
+        .search-form {
+            display:none;
+        }
+      
+    }
+    @media (min-width : 768px) {
+        .search-h {
+            display:none;
+        }
+      
+    }
+    @media (max-width : 500px) {
+        .navitem {
+            display:none;
+        }
+    .fa-bars{
+        font-size: 30px;
+    }
+    .logo {
+        font-size: 25px;
+    
+    }
+    }
+    
+.navitem{
+    padding: 0px 10px 0px 10px;
+}
+li{
+    list-style: none;
+}

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build" : "tailwind build ./src/tailwindcss.css -o ./public/style.css",
-    "watch" : "tailwind build ./src/tailwindcss.css -o ./public/style.css --watch"
+    "build": "tailwind build ./src/tailwindcss.css -o ./public/style.css",
+    "watch": "tailwind build ./src/tailwindcss.css -o ./public/style.css --watch"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.7",
     "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.6"
+    "tailwindcss": "^3.1.6",
+    "tailwindcss-hyphens": "^0.1.0"
   }
 }
