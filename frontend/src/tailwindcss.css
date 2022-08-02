@@ -7,7 +7,7 @@
 
 @layer components {
     .btn-primary {
-      @apply text-black dark:text-white border-2 border-lime-100 text-lg
+      @apply text-black dark:text-white border-2 border-black  dark:border-lime-100
     rounded-sm  cursor-pointer text-black ; 
     }
 
@@ -19,7 +19,7 @@
 
 
     .twitter-card {
-      @apply mt-8 mb-8 rounded dark:bg-yellow-200  bg-yellow-400 px-6 py-8 sm:mt-10 sm:mb-10 md:px-10;
+      @apply mt-8 mb-8 rounded dark:bg-yellow-200  bg-yellow-900 px-6 py-8 sm:mt-10 sm:mb-10 md:px-10;
     
     }
     .img-fix {

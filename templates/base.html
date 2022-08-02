@@ -1,39 +1,76 @@
+
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>{% block title %}{% endblock %}</title>
-<link href="{% static 'css/base.css' %}" rel="stylesheet">
-<link href="{% static 'css/style.css' %}" rel="stylesheet">
-</head>
-{% block style %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/f515549239.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/extras.css' %}">
 <style>
 
-    *{
-        margin:0;
-        padding: 0px;
-    }
-
 </style>
-{% endblock style %}
+</head>
 
-<body>
-   <!-- <p>{{ request.path }}</p> -->
-    <div class="header">
-        <p  class = 'text-purple-600 text-xl '>This is my blog</p>
-        {% if request.user.is_authenticated %}
-    Hello {{ request.user.username }},  
-        <a class="text-red-500" href="{% url 'logout' %}">Logout</a>
-        {% else %}  
-        {% if request.path == '/login/' %}
-       <a href="/"> Home</a>
-        {% else %}
-        <a class="text-blue-500" href="{% url 'login' %}">Log-in</a> or <a class="text-blue-500" href="{% url 'register' %}">Register</a>
-        {% endif %}
-        {% endif %}
-    </div>
+<body class = 'bg-slate-50 dark:bg-slate-800'>
+    <div class="nav-container  h-auto">
+    <div class=" max-w-[90%]  lg:max-w-[80%] m-auto   ">
+
     
+
+    <!-- Navbar starts here!!!! -->
+    <!-- Navbar starts here!!!! -->
+    <!-- Navbar starts here!!!! -->
+    <!-- Navbar starts here!!!! -->
+    <!-- Navbar starts here!!!! -->
+    <div class = ' '>
+        
+   <div class="pt-5 pb-5 navbar flex flex-row justify-between items-center m-auto">
+    <div class="logo-bars flex flex-row items-center justify-start ">
+       <p class="dark:text-white nav-item"><i class =' fa fa-bars fa-2xl'></i></p>
+       <a href="/">
+       <p style="font-family: 'Arvo', serif;" class="dark:text-white text-3xl nav-item ml-5 border-2 border-black dark:border-white text-green-400 p-1 logo " >Aedash</p>
+    </a>
+       <p class="dark:text-white sun toggler nav-item ml-5"><i class="fa-solid fa-sun  fa-xl"></i></p>
+       <p class="dark:text-white moon  nav-item ml-5"><i class="fa-regular fa-moon fa-xl"></i></p>
+    </div>
+    <div class="navlists flex flex-row justify-start items-center">
+        <p class="dark:text-white nav-item search-h "><i class="fa fa-search fa-xl"></i></p>
+        <div class="border-2  border-green-300 rounded form-elem">
+        <form class = 'search-form selection:hidden'action="">
+            <input class="focus:outline-none border-2 rounded-md border-none bg-transparent text-black dark:text-white w-[200px]" type="text">
+            <button class=" p-1 " type="submit"><i class="dark:text-white text-black fa fa-search  fa-xl"></i></button>
+        </form>
+    </div>
+    {% if user.is_authenticated %}
+        
+    <a href="{% url 'logout' %}">
+        <li class="dark:text-white text-xl navitem ">Logout</li>
+       </a>
+    {% else %}
+    <a href="{% url 'login' %}">
+        <li class="dark:text-white text-xl navitem">Login</li>
+       </a>
+       <a href="{% url 'register' %}">
+        <li class="dark:text-white btn-primary text-xl  navitem">Register</li>
+    </a>
+    {% endif %}
+
+    </ul>
+   </div>
 </div>
+</div>
+
+
 {% block content %}{% endblock %}
+<script src="{% static 'css/script.js' %}"></script>
+
 </body>
 </html>

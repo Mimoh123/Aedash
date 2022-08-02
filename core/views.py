@@ -52,6 +52,7 @@ def register(request):
 
 def post_detail(request,year,month,day,post):
     post = get_object_or_404(Post,slug= post,status='published',publish__year = year,publish__day = day)
+    feature = Post.objects.filter(featured = True)
     #comments which are active
     comments = post.comments.filter(active = True)
 
@@ -76,6 +77,6 @@ def post_detail(request,year,month,day,post):
     
     return render(request,
         'core/post_detail.html',
-        {'post': post,'comments':comments,'new_comment':new_comment})
+        {'post': post,'comments':comments,'new_comment':new_comment,'featured':feature})
         
     

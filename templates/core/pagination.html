@@ -1,13 +1,29 @@
-<div class="pagination">
-    <span class="step-links">
-    {% if page.has_previous %}
-    <a href="?page={{ page.previous_page_number }}">Previous</a>
+
+
+
+<div class="flex justify-center items-center mt-6 ">
+
+    <span class="text-black dark:text-white block">Page {{ page.number }} of {{ page.paginator.num_pages }}. <span class="mr-3"></span></span>
+    <div class="space-x-1">
+        {% if page.has_previous %}
+        <a href="?page={{ page.previous_page_number }}#paginate_dir">
+      <button title="previous" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow">
+        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4 text-black dark:text-white">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+ 
+    </a>
     {% endif %}
-    <span class="current">
-    Page {{ page.number }} of {{ page.paginator.num_pages }}.
-    </span>
     {% if page.has_next %}
-    <a href="?page={{ page.next_page_number }}">Next</a>
+    <a href="?page={{ page.next_page_number }}#paginate_dir">
+  
+      <button title="next" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow">
+        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4 text-black dark:text-white">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </a>
     {% endif %}
-</span>
-</div>
+    </div>
+  </div>

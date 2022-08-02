@@ -1,3 +1,4 @@
+from pyexpat import model
 from django.db import models
 from django.conf import settings
 
@@ -12,6 +13,7 @@ class Post(models.Model):
         ('draft', 'Draft'),
         ('published', 'Published'),
     )
+    
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250,
                             unique_for_date='publish')
@@ -25,7 +27,7 @@ class Post(models.Model):
     status = models.CharField(max_length=10,
                               choices=STATUS_CHOICES,
                               default='draft')
-
+    featured = models.BooleanField(default = False)
     class Meta:
         ordering = ('-publish',)
 
@@ -49,6 +51,7 @@ class Comment(models.Model):
     updated = models.DateTimeField(auto_now=True)
     #we can use this active feature to manually deactivate a comment
     active = models.BooleanField(default=True)
+    featured = models.BooleanField(default = False)
 
     class Meta:
         ordering = ('created',)

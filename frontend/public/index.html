@@ -38,10 +38,10 @@
     </div>
     <div class="navlists flex flex-row justify-start items-center">
         <p class="dark:text-white nav-item search-h "><i class="fa fa-search fa-xl"></i></p>
-        <div class="border-2 p border-green-300 rounded form-elem">
+        <div class="border-2  border-green-300 rounded form-elem">
         <form class = 'search-form selection:hidden'action="">
             <input class="focus:outline-none border-2 rounded-md border-none bg-transparent text-black dark:text-white w-[200px]" type="text">
-            <button class="bg-green-300 p-1" type="submit"><i class="dark:text-black fa fa-search  fa-xl"></i></button>
+            <button class=" p-1 " type="submit"><i class="dark:text-white text-black fa fa-search  fa-xl"></i></button>
         </form>
     </div>
    
@@ -91,9 +91,33 @@
 
 
 <div class="blog-container max-w-[1200px] m-auto">
-  
+    <h1 class="text-center mb-6 text-3xl text-black dark:text-white">Blog Posts</h1>
+    <header class="p-4  dark:text-gray-100">
+       <div class="container flex justify-between h-16 mx-auto">
+           <div class="flex">
+           
+               <ul class="items-stretch hidden space-x-3 lg:flex">
+                   <li class="flex">
+                       <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Link</a>
+                   </li>
+                   <li class="flex">
+                       <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400">Link</a>
+                   </li>
+                   <li class="flex">
+                       <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Link</a>
+                   </li>
+                   <li class="flex">
+                       <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Link</a>
+                   </li>
+               </ul>
+           </div>
+       
+       
+       </div>
+    </header>    
+    <br>  
     <section class="flex flex-col justify-center antialiased  dark:text-white text-black  min-h-[200px]  ">
-        <div class="max-w-6xl mx-auto p-4 sm:px-6 h-full dark:bg-[rgba(24,27,58,0.36)] rounded-[20px]">
+        <div class="max-w-6xl mx-auto p-4 sm:px-6 h-full dark:bg-[rgba(24,27,58,0.36)] rounded-[20px] mb-4">
             <!-- Blog post -->
             <article class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
                 <a class="block group" href="#0">
@@ -106,24 +130,88 @@
                         <div class="mb-3">
                             <ul class="flex flex-wrap text-xs font-medium -m-1">
                                 <li class="m-1">
-                                    <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out" href="#0">Product</a>
+                                    <a class="inline-flex text-center text-black p-1 text-md rounded-full btn-primary  transition duration-150 ease-in-out" href="#0">Product</a>
                                 </li>
                                 <li class="m-1">
-                                    <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Engineering</a>
+                                    <a class="inline-flex p-1 text-md text-center text-gray-100 py-1 px-3 rounded-full btn-primary transition duration-150 ease-in-out" href="#0">Engineering</a>
                                 </li>
                             </ul>
                         </div>
                         <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
-                            <a class="hover:text-gray-100 transition duration-150 ease-in-out" href="#0">Designing a functional workflow at home.</a>
+                            <a class="hover:text-gray-100 transition duration-150 ease-in-out" href="#0">Starting a django project</a>
                         </h3>
                     </header>
                     <p class="text-lg text-gray-400 flex-grow">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.</p>
              
                 </div>
             </article>    
+      
+        </div>
+        
+        <div class="max-w-6xl mx-auto p-4 sm:px-6 h-full dark:bg-[rgba(24,27,58,0.36)] rounded-[20px]">
+            <!-- Blog post -->
+            <article class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
+                <a class="block group" href="#0">
+                 <div class="w-[100%] h-[300px]">
+                        <img class="object-cover h-[100%] w-[100%] " src="https://img.freepik.com/premium-vector/back-school_118813-4086.jpg"  alt="Blog post">
+                    </div>
+                    </figure>
+                </a>
+                <div>
+                    <header>
+                        <div class="mb-3">
+                            <ul class="flex flex-wrap text-xs font-medium -m-1">
+                                <li class="m-1">
+                                    <a class="inline-flex text-center text-black p-1 text-md rounded-full btn-primary  transition duration-150 ease-in-out" href="#0">Product</a>
+                                </li>
+                                <li class="m-1">
+                                    <a class="inline-flex p-1 text-md text-center text-black dark:text-white py-1 px-3 rounded-full btn-primary transition duration-150 ease-in-out" href="#0">Engineering</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
+                            <a class="hover:text-gray-100 transition duration-150 ease-in-out" href="#0">Python: List Comprehensions</a>
+                        </h3>
+                    </header>
+                    <p class="text-lg text-gray-400 flex-grow">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.</p>
+             
+                </div>
+            </article>    
+            <br>
+        </div>
+        <div class="max-w-6xl mx-auto p-4 sm:px-6 h-full dark:bg-[rgba(24,27,58,0.36)] rounded-[20px]">
+            <!-- Blog post -->
+            <article class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
+                <a class="block group" href="#0">
+                 <div class="w-[100%] h-[300px]">
+                        <img class="object-cover h-[100%] w-[100%] " src="https://img.freepik.com/free-vector/flat-design-back-school-timetable_23-2148593567.jpg?w=1060&t=st=1659243805~exp=1659244405~hmac=14b7e823b8ffc3022d7facf1667950293c5ed3b801375e9a109f699fa97a46c6"  alt="Blog post">
+                    </div>
+                    </figure>
+                </a>
+                <div>
+                    <header>
+                        <div class="mb-3">
+                            <ul class="flex flex-wrap text-xs font-medium -m-1">
+                                <li class="m-1">
+                                    <a class="inline-flex text-center text-black p-1 text-md rounded-full btn-primary  transition duration-150 ease-in-out" href="#0">Product</a>
+                                </li>
+                                <li class="m-1">
+                                    <a class="inline-flex p-1 text-md text-center text-gray-100 py-1 px-3 rounded-full btn-primary transition duration-150 ease-in-out" href="#0">Engineering</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
+                            <a class="hover:text-gray-100 transition duration-150 ease-in-out" href="#0">Python: List Comprehensions</a>
+                        </h3>
+                    </header>
+                    <p class="text-lg text-gray-400 flex-grow">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.</p>
+             
+                </div>
+            </article>    
+            <br>
         </div>
 
-    <!-- More components -->
+
   
   </div>
 
@@ -131,8 +219,39 @@
 </div>
 
 </div>
+<div class="flex justify-center items-center mt-6 ">
+	<span class="text-black dark:text-white block">Page 2 of 4 <span class="mr-3"></span></span>
+	<div class="space-x-1">
+		<button title="previous" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow">
+			<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4 text-black dark:text-white">
+				<polyline points="15 18 9 12 15 6"></polyline>
+			</svg>
+		</button>
+		<button title="next" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow">
+			<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4 text-black dark:text-white">
+				<polyline points="9 18 15 12 9 6"></polyline>
+			</svg>
+		</button>
+	</div>
+</div>
 <!-- footer -->
-
+<br>
+<footer class="text-center text-white" ">
+    <div class="flex justify-center items-center p-3 dark:bg-slate-800 bg-slate-100 ">
+      
+      
+  
+   
+     
+      </div>
+    </div>
+  
+    <div class="text-black dark:text-white text-center p-4 bg-slate-100 dark:bg-slate-800" >
+      © 2021 Copyright:
+      <a class="text-black dark:text-white" href="https://tailwind-elements.com/">Aedash.py</a>
+    </div>
+  </footer>
+  
 <script src="https://kit.fontawesome.com/f515549239.js" crossorigin="anonymous"></script>
 
 <script src="./script.js" ></script>
