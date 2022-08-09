@@ -4,7 +4,7 @@ from . import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-      path('',views.index,name = 'index'),
+    path('',views.index,name = 'index'),
     path('locked/',views.locked_page,name = 'locked'),
     
     # user creation and authentication
@@ -29,5 +29,8 @@ path('register/',views.register,name='register'),
 path('<int:year>/<int:month>/<int:day>/<slug:post>/',
 views.post_detail,
 name='post_detail'),
+
+#Info view
+# path('',views.info_view,name = 'info_view')
 
 ]

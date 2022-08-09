@@ -6,12 +6,19 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserRegistrationForm,CommentForm
 from .models import Post,Comment
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core import serializers
+from django.http import HttpResponse
+from django.http import JsonResponse
+
 
 
 # from requests import request
 # Create your views here.
 
 def index(request):
+
+
+    
     object_list = Post.objects.filter(status = 'published')
     paginator = Paginator(object_list,3) # 3 posts in each page
     page = request.GET.get('page')
@@ -25,7 +32,7 @@ def index(request):
         posts = paginator.page(paginator.num_pages)
     
     
-    return render(request,'core/index.html',{'posts':posts,'page':page})
+    return render(request,'core/index.html',{'posts':posts,'page':page,})
 
 
 #implementing authentication
@@ -79,4 +86,6 @@ def post_detail(request,year,month,day,post):
         'core/post_detail.html',
         {'post': post,'comments':comments,'new_comment':new_comment,'featured':feature})
         
-    
+def search(request):
+    data = list(Post.objects.values())
+    return render(request,'base.html',{'data':data})

@@ -43,16 +43,20 @@
     </div>
     <div class="navlists flex flex-row justify-start items-center">
         <p class="dark:text-white nav-item search-h "><i class="fa fa-search fa-xl"></i></p>
-        <div class="border-2  border-green-300 rounded form-elem">
-        <form class = 'search-form selection:hidden'action="">
-            <input class="focus:outline-none border-2 rounded-md border-none bg-transparent text-black dark:text-white w-[200px]" type="text">
+        <div class=" relative border-2  border-green-300 rounded form-elem">
+        <form class = 'search-form selection:hidden 'action="">
+            <input id="search_here" placeholder="Search" class=" search_item focus:outline-none border-2 rounded-md border-none bg-transparent text-black dark:text-white w-[200px]" type="text">
             <button class=" p-1 " type="submit"><i class="dark:text-white text-black fa fa-search  fa-xl"></i></button>
         </form>
+        <div class="s-results" style="position: absolute;inset:0; top : 35px;width:100%; height : auto ; ">
+       
+        </div>
     </div>
+
     {% if user.is_authenticated %}
         
     <a href="{% url 'logout' %}">
-        <li class="dark:text-white text-xl navitem ">Logout</li>
+        <li  class="dark:text-white text-xl navitem ">Logout</li>
        </a>
     {% else %}
     <a href="{% url 'login' %}">
@@ -69,7 +73,72 @@
 </div>
 
 
+
 {% block content %}{% endblock %}
+
+
+<script>
+
+    
+    
+      
+
+    const data= '{{search}}';
+    const dt = JSON.parse(data.replace(/&#x27;/g,'"'));
+    const d = JSON.stringify(dt)
+ 
+    const rdata = Object.keys(dt)
+    
+
+
+    const input = document.querySelector('#search_here')
+ 
+    const box = document.querySelector('.s-results')
+
+   
+    let filteredArr = []
+   
+
+
+    input.addEventListener('keyup',(e)=> {
+        box.innerHTML = ""
+        filteredArr = rdata.filter(elem => elem.toLowerCase().includes(e.target.value.toLowerCase()))
+      
+
+  
+        box.classList.remove('hidden')
+
+        
+
+        if (filteredArr.length > 0){
+
+            for( let i = 0 ; i < 6; i++){
+                box.innerHTML +=  `<a href=${dt[filteredArr[i]]}><p class= 'searchList dark:text-white text-white'  style = "background : rgb(49, 52, 68);padding: 5px">${filteredArr[i].slice(0,25)+'...'}</p></a>`
+            }
+
+          
+            }else{
+                
+                box.innerHTML = `<p class = "dark:text-white text-white" style = "background : rgb(49, 52, 68);padding: 5px ">No result</p>`
+        }
+        
+
+    })
+    const doc_e = document.documentElement
+   doc_e.addEventListener('click',function(e){
+    box.classList.add('hidden')
+   })
+
+   const search_item = document.querySelectorAll('.search_item')
+   console.log(search_item);
+   search_item.forEach(function(elem){
+    elem.addEventListener('click',function(){
+       
+        console.log(search_item);
+       })
+   })
+</script>
+
 <script src="{% static 'css/script.js' %}"></script>
 
 </body>

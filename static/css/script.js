@@ -25,23 +25,24 @@ const themeCheck = () => {
 
 const themeSwitch = () => {
     if (document.documentElement.classList.contains("dark")){
-        console.log('contains dark make white')
-        console.log('moon')
+        // console.log('contains dark make white')
+        // console.log('moon')
+
        
         document.documentElement.classList.remove("dark")
         const d  = document.documentElement
-        console.log(d)
+        // console.log(d)
         localStorage.setItem("theme","light");
         iconToggle();
         return;
     }else{
-        console.log('contains white make dark')
-        console.log('sun')
+        // console.log('contains white make dark')
+        // console.log('sun')
   
     document.documentElement.classList.add("dark")
     localStorage.setItem("theme",'dark')
           const d  = document.documentElement
-        console.log(d)
+        // console.log(d)
     iconToggle();
     }
 }
@@ -56,3 +57,8 @@ moon.addEventListener('click',function() {
 
 })
 themeCheck();
+
+
+
+//Search
+
