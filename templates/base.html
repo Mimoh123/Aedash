@@ -78,50 +78,33 @@
 
 
 <script>
-
-    
-    
-      
-
     const data= '{{search}}';
     const dt = JSON.parse(data.replace(/&#x27;/g,'"'));
     const d = JSON.stringify(dt)
  
     const rdata = Object.keys(dt)
-    
-
 
     const input = document.querySelector('#search_here')
  
     const box = document.querySelector('.s-results')
-
    
     let filteredArr = []
-   
-
 
     input.addEventListener('keyup',(e)=> {
         box.innerHTML = ""
         filteredArr = rdata.filter(elem => elem.toLowerCase().includes(e.target.value.toLowerCase()))
-      
-
-  
         box.classList.remove('hidden')
-
-        
 
         if (filteredArr.length > 0){
 
             for( let i = 0 ; i < 6; i++){
                 box.innerHTML +=  `<a href=${dt[filteredArr[i]]}><p class= 'searchList dark:text-white text-white'  style = "background : rgb(49, 52, 68);padding: 5px">${filteredArr[i].slice(0,25)+'...'}</p></a>`
             }
-
           
             }else{
                 
                 box.innerHTML = `<p class = "dark:text-white text-white" style = "background : rgb(49, 52, 68);padding: 5px ">No result</p>`
         }
-        
 
     })
     const doc_e = document.documentElement

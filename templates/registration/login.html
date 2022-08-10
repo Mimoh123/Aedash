@@ -4,58 +4,85 @@
 {% endblock  %}
 {% block content %}
 
+ {% if request.user.is_authenticated %}
+
+
+<h1 class="text-black dark:text-white">You are logged in</h1>
+<p class="text-black dark:text-white">
+    You can return <a href="{% url 'index' %}">Home</a>.
+{% else %}
 
 
 
-{% if request.user.is_authenticated %}
-
-
-<h1>You are logged in</h1>
-<p>
-
-You can return <a href="{% url 'index' %}">Home</a>.
 </p>
 
+<div  class="w-full max-w-sm m-auto  p-6  mt-6  rounded-md shadow sm:p-8  bg-gray- dark:bg-slate-900 dark:text-gray-100" >
+	<h2 class="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
+	<p class="text-sm text-center dark:text-gray-400">Dont have account?
+		<a href="{% url 'register' %}" rel="noopener noreferrer" class="focus:underline hover:underline">Sign up here</a>
+       
+	</p>
+	<div class="my-6 space-y-4">
+		<button aria-label="Login with Google" type="button" class="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400">
+			
+			<p>Login with Google</p>
+		</button>
+		
 
-{% else %}
-<h1>Login</h1>    
-{% if form.errors %}
-<p>
-Your username and password didn't match.
-Please try again.
-</p>
-{% else %}
-<p>Please, use the following form to log-in:</p>
+	</div>
+	<div class="flex items-center w-full my-4">
+		<hr class="w-full dark:text-gray-400">
+		<p class="px-3 dark:text-gray-400">OR</p>
+		<hr class="w-full dark:text-gray-400">
+	</div>
+	<form  method="post" action="{% url 'login' %} " class="space-y-8 ng-untouched ng-pristine ng-valid">
+     
+
+            {% csrf_token %}
+            <!-- {{ form.username.label }}
+            <style>
+                .username [type = text] {
+                        border : 5px solid pink;
+                }
+                .usernam {
+                    border : none;
+                }
+            </style>
+            <p class="username">{{ form.username }}</p>
+            
+            <br>
+            <br>
+            {{ form.password.label }} -->
+          
+		<div class="space-y-4">
+			<div class="space-y-2">
+				<label for="text" class="block text-sm">{{ form.username.label }}</label>
+                <p class="username w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400">
+                    {{ form.username }}
+                </p>
+				
+			</div>
+			<div class="space-y-2">
+				<div class="flex justify-between">
+					<label for="password" class="text-sm">{{ form.password.label }}</label>
+			
+				</div>
+                <div class="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" >{{ form.password }}</div>
+				<!-- <input type="password" name="password" id="password" placeholder="*****" class="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400"> -->
+			</div>
+		</div>
+		<!-- <button type="button" class="w-full  font-semibold rounded-md  dark:text-gray-400 text-black btn-primary  "><p class="py-6 "></p> Sign in</button> -->
+        <input type="hidden" name="next" value="{{ next }}" />
+        <!-- <p><input type="submit" value="Log-in"></p> -->
+        <button type='submit' class="btn-primary w-full  rounded-md p-2">Login</button>
+        <a rel="noopener noreferrer" href="{% url 'password_reset' %}" class="text-xs hover:underline dark:text-gray-400 text-center ">Forgot password?</a>
+  
+	</form>
+</div>
 {% endif %}
-<div class="login-form">
-<form action="{% url 'login' %}" method="post">
-
-    {% csrf_token %}
-    {{ form.username.label }}
-    <style>
-        .username [type = text] {
-                border : 5px solid pink;
-        }
-        .usernam {
-            border : none;
-        }
-    </style>
-    <div class="username">{{ form.username }}</div>
-    
-    <br>
-    <br>
-    {{ form.password.label }}
-    {{ form.password }}
-    <!-- This next stores the page which we wanted to visit which required login -->
-    <input type="hidden" name="next" value="{{ next }}" />
-    <p><input type="submit" value="Log-in"></p>
-    </form>
-    </div>
-    <p>New Here? <a href="{% url 'register' %}">Register</a></p>
-    <p><a href="{% url 'password_reset' %}">Forgotten your password?</a></
-        p>
-
-{% endif %}
-
 {% endblock content %}
+
+
+
+
 

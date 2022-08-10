@@ -16,13 +16,22 @@ z-index: 1000;
         .search-form {
             display:none;
         }
-      
+        /* .sidebar-container {
+            display : flex;
+           } */
+            
     }
     @media (min-width : 768px) {
         .search-h {
             display:none;
         }
-      
+        .toggle {
+            display :none;
+           }  
+           .sidebar-container {
+            display :none;
+        }
+     
     }
     @media (max-width : 500px) {
         .navitem {
@@ -35,6 +44,7 @@ z-index: 1000;
         font-size: 25px;
     
     }
+ 
     }
     
 .navitem{
