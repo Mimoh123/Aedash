@@ -13,6 +13,8 @@ class PostAdmin(admin.ModelAdmin):
     date_hierarchy = 'publish'
     ordering = ('status', 'publish'
 )
+    class Media:
+        js= ('js/tinyjs.js',)
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
