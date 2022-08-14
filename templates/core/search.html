@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+{% if results %}
+
+
+<section class="flex flex-col justify-center antialiased  dark:text-white text-black  min-h-[200px] pt-6  ">
+    <!-- Blog post -->
+
+    <h1 class="dark:text-white text-black text-4xl text-center mb-6"> Results for '{{ query | capfirst }}' </h1>
+    {% for post in results %}
+
+    
+      <div class="max-w-6xl mx-auto p-4 sm:px-6 h-full bg-white dark:bg-[rgba(24,27,58,0.36)] rounded-[20px] mb-4 " id = 'paginate_dir'>
+          
+          <article class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
+              <a class="block group" href="#0">
+               {% if post.image %}
+                      <img class="w-full h-full object-cover" src="{{ post.image.url }}" width="540" height=303 alt="Blog post">
+                {% else %}
+                    <img class=" w-full h-full object-cover " src="{% static 'img/default.png' %}" width="540" height="303" alt="Blog post">
+
+                      {% endif %}
+                  </figure>
+              </a>
+              <div>
+                  <header>
+                      <div class="mb-3">
+                          <ul class="flex flex-wrap text-xs font-medium -m-1">
+                            {% for tag in post.tags.all %}
+                                
+                        
+                              <li class="m-1">
+                                  <p class="inline-flex text-center text-black p-1 text-md rounded-full btn-primary  transition duration-150 ease-in-out" >
+                                    {% if tag is none %}
+                               Blog
+                                    {% else %}
+                                    {{ tag }}
+                                    {% endif %}
+                                
+                                  </p>
+                              </li>
+                              {% endfor %}
+                       
+                          </ul>
+                      </div>
+                      <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
+                          <a class=" transition duration-150 ease-in-out" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                      </h3>
+                  </header>
+                  {% if post.subtitle %}
+                  <p class="text-lg text-gray-400 flex-grow"> {{ post.subtitle| safe |truncatewords:50|linebreaks }}</p>
+                {% else %}
+                <p class="text-lg text-gray-400 flex-grow">Blog Post</p>
+                  {% endif %}
+                
+                
+           
+              </div>
+          </article>    
+    
+      </div>
+      {% endfor %}
+    </section>
+</a>
+
+
+{% else %}
+<h1 class="dark:text-white text-black text-4xl text-center mb-6">No Results for '{{ query | capfirst }}' </h1>
+{% endif %}
+{% endblock content %}  
+
+
+

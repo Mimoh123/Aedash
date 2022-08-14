@@ -1,5 +1,5 @@
 'use strict';
-
+// console.log('hello')
 const sun = document.querySelector('.sun');
 const moon  = document.querySelector('.moon')
 const doc = document.getElementsByTagName('body')[0]
@@ -60,5 +60,14 @@ themeCheck();
 
 
 
-//Search
+// const tagBtn = document.querySelectorAll('.tag-btn')
+// console.log('click')
+// tagBtn.forEach((elem) => 
+// {
+//     elem.addEventListener('click',function(){
+//     elem.classList.add('border-t-4' ,'border-indigo-500')
+//         console.log('done')
+//     })
+// })
+
 

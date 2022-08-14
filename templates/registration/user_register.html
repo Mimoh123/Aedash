@@ -1,34 +1,20 @@
-{% extends "base.html" %}
-
-{% block title %}Create an account{% endblock %}
-
+{% extends "base.html" %} {% block title %}Create an account{% endblock %} 
 {% block content %}
 <style>
-    .email_field{
-        color : rgb(114, 0, 19);
-    }
-    body{
-        background-color: rgb(189, 255, 189);
-    }
+  .email_field {
+    color: rgb(114, 0, 19);
+  }
+  body {
+    background-color: rgb(189, 255, 189);
+  }
 </style>
 <h1>Create an account</h1>
 <p>Please, sign up using the follow ing form:</p>
 <form method="post">
-<!-- {{ user_form.as_p }} -->
-{% csrf_token %}
-{{ user_form.username.label }}
-{{ user_form.username }}
-<br>
-{{ user_form.email.label }}
-{{ user_form.email }}
+  {% csrf_token %} 
 
-<br>
-{{ user_form.password.label }}
-{{ user_form.password }}
-<br>
-{{ user_form.password2.label }}
-{{ user_form.password2 }}
-
-<p><input type="submit" value="Create my account"></p>
+  {{ user_form.as_p }}
+ 
+  <p><input type="submit" value="Create my account" /></p>
 </form>
 {% endblock %}

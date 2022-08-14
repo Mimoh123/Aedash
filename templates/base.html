@@ -44,8 +44,8 @@
     <div class="navlists flex flex-row justify-start items-center">
         <p class="dark:text-white nav-item search-h "><i class="fa fa-search fa-xl"></i></p>
         <div class=" relative border-2  border-green-300 rounded form-elem">
-        <form class = 'search-form selection:hidden 'action="">
-            <input id="search_here" placeholder="Search" class=" search_item focus:outline-none border-2 rounded-md border-none bg-transparent text-black dark:text-white w-[200px]" type="text">
+        <form class = 'search-form selection:hidden 'action="{% url 'search' %}">
+            <input id="search_here" name = 'query' placeholder="Search" class=" search_item focus:outline-none border-2 rounded-md border-none bg-transparent text-black dark:text-white w-[200px]" type="text">
             <button class=" p-1 " type="submit"><i class="dark:text-white text-black fa fa-search  fa-xl"></i></button>
         </form>
         <div class="s-results" style="position: absolute;inset:0; top : 35px;width:100%; height : auto ; ">
@@ -79,6 +79,7 @@
 
 <script>
     const data= '{{search}}';
+    console.log(data);
     const dt = JSON.parse(data.replace(/&#x27;/g,'"'));
     const d = JSON.stringify(dt)
  
@@ -123,6 +124,8 @@
 </script>
 
 <script src="{% static 'css/script.js' %}"></script>
-
+{% block script %}
+    
+{% endblock script %}
 </body>
 </html>

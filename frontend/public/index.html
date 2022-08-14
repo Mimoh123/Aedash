@@ -1,342 +1,587 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html  lang="en">
+    <div class="overlay"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">  
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="./extras.css">
-<style>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./extras.css" />
+    <style></style>
+  </head>
 
-</style>
-</head>
-
-<body class = 'relative bg-slate-50 dark:bg-slate-800'>
+  <body class="relative bg-slate-50 dark:bg-slate-800">
     <!-- side bar -->
-<!-- side bar -->
-<!-- side bar -->
-<!-- side bar -->
-<!-- side bar -->
-<!-- side bar -->
-<div class="fixed hidden flex transition-all  flex-col h-full p-5 w-80 dark:bg-gray-900 bg-green-100 dark:text-gray-100 text-slate-800 sidebar-container">
-	<div class="space-y-3">
-		<div class="flex items-center justify-between">
-            <p style="font-family: 'Arvo', serif;" class="dark:text-white text-xl nav-item  border-2 border-black dark:border-white text-green-400 p-1 logo " >Aedash</p>
-			<button class="p-2">
-				<p class="dark:text-white nav-item toggle"><i class =' fa-solid fa-x fa-xl'></i>
-			</button>
-		</div>
-		<div class="relative">
-			<span class="absolute inset-y-0 left-0 flex items-center py-4">
-				<button type="submit" class="p-2 focus:outline-none focus:ring">
-                    <p class="dark:text-gray-400 nav-item search-h "><i class="fa fa-search fa-md"></i></p>
-				</button>
-			</span>
-			<input type="search" name="Search" placeholder="Search..." class="sidebar-search focus w-full py-2 pl-10 text-sm dark:border-transparent rounded-md focus:outline-none dark:bg-gray-800 dark:text-gray-100 focus:dark:bg-gray-900">
-		</div>
-		<div class="flex-1">
-			<ul class="pt-2 pb-4 space-y-1 text-sm">
-				<li class="rounded-sm">
-					<a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
-						<svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current stroke-black dark:stroke-gray-300">
-							<path d="M469.666,216.45,271.078,33.749a34,34,0,0,0-47.062.98L41.373,217.373,32,226.745V496H208V328h96V496H480V225.958ZM248.038,56.771c.282,0,.108.061-.013.18C247.9,56.832,247.756,56.771,248.038,56.771ZM448,464H336V328a32,32,0,0,0-32-32H208a32,32,0,0,0-32,32V464H64V240L248.038,57.356c.013-.012.014-.023.024-.035L448,240Z"></path>
-						</svg>
-						<span>Home</span>
-					</a>
-				</li>
-                <li class="rounded-sm">
-					<a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
-                        <svg class="stroke-black dark:stroke-gray-300" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-						<span>About</span>
-					</a>
-				</li>
-				<li class="rounded-sm">
-					<a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-black dark:stroke-gray-300"width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><path d="M14 3v5h5M16 13H8M16 17H8M10 9H8"/></svg>
-						<span>Register</span>
-					</a>
-				</li>
-				
-				<li class="rounded-sm">
-					<a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
-                        <svg class="stroke-black dark:stroke-gray-300" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"/></svg>
-						<span>Login</span>
-					</a>
-				</li>
-		
-			
-		
-		
-				<li class="rounded-sm">
-					<a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current stroke-black dark:stroke-gray-300">
-							<path d="M440,424V88H352V13.005L88,58.522V424H16v32h86.9L352,490.358V120h56V456h88V424ZM320,453.642,120,426.056V85.478L320,51Z"></path>
-							<rect width="32" height="64" x="256" y="232"></rect>
-						</svg>
-						<span>Logout</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="flex items-center p-2 mt-12 space-x-4 justify-self-end">
-		<img src="https://source.unsplash.com/100x100/?portrait" alt="" class="w-12 h-12 rounded-lg dark:bg-gray-500">
-		<div>
-			<h2 class="text-lg font-semibold">Leroy Jenkins</h2>
-		
-		</div>
-	</div>
-</div>
-
-
-
-<!-- sidebar end -->
-<!-- sidebar end -->
-<!-- sidebar end -->
-<!-- sidebar end -->
-<!-- sidebar end -->
-    <div class="nav-container  h-auto">
-    <div class=" max-w-[90%]  lg:max-w-[80%] m-auto   ">
-
+    <!-- side bar -->
+    <!-- side bar -->
+    <!-- side bar -->
+    <!-- side bar -->
+    <!-- side bar -->
+    <div
+      class="fixed hidden flex transition-all flex-col h-full p-5 w-80 dark:bg-gray-900 bg-green-100 dark:text-gray-100 text-slate-800 sidebar-container"
+    >
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <p
+            style="font-family: 'Arvo', serif"
+            class="dark:text-white text-xl nav-item border-2 border-black dark:border-white text-green-400 p-1 logo"
+          >
+            Aedash
+          </p>
+          <button class="p-2">
+            <p class="dark:text-white nav-item toggle">
+              <i class=" fa-solid fa-x fa-xl"></i>
+            </p>
+          </button>
+        </div>
+        <div class="relative">
+          <form action="">
+            <span class=" absolute inset-y-0 left-0 flex items-center py-4">
+              <button type="submit" class="p-2 focus:outline-none focus:ring">
+                <p class="dark:text-gray-400 nav-item search-h">
+        
+                </p>
+              </button>
+            </span>
+            <div class = 'relative'>
+              <input
+                id = 'search_here'
+                type="search"
+                name="Search"
+                placeholder="Search..."
+                class="sidebar-search search-item focus w-full py-2 pl-10 text-sm dark:border-transparent rounded-md focus:outline-none dark:bg-gray-800 dark:text-gray-100 focus:dark:bg-gray-900"
+              />
+            </div>
     
-
-    <!-- Navbar starts here!!!! -->
-    <!-- Navbar starts here!!!! -->
-    <!-- Navbar starts here!!!! -->
-    <!-- Navbar starts here!!!! -->
-    <!-- Navbar starts here!!!! -->
-    <div class = ' '>
-        
-   <div class="pt-5 pb-5 navbar flex flex-row justify-between items-center m-auto">
-    <div class="logo-bars flex flex-row items-center justify-start ">
-       <p class="dark:text-white nav-item toggle"><i class =' fa fa-bars fa-2xl'></i></p>
-       <p style="font-family: 'Arvo', serif;" class="dark:text-white text-3xl nav-item ml-5 border-2 border-black dark:border-white text-green-400 p-1 logo " >Aedash</p>
-       
-       <p class="dark:text-white sun toggler nav-item ml-5"><i class="fa-solid fa-sun  fa-xl"></i></p>
-       <p class="dark:text-white moon  nav-item ml-5"><i class="fa-regular fa-moon fa-xl"></i></p>
-    </div>
-    <div class="navlists flex flex-row justify-start items-center">
-        <p class="dark:text-white nav-item search-h search-toggle "><i class="fa fa-search fa-xl"></i></p>
-        <div class="border-2  border-green-300 rounded form-elem">
-        <form class = 'search-form selection:hidden'action="">
-            <input class="focus:outline-none border-2 rounded-md border-none bg-transparent text-black dark:text-white w-[200px]" type="text">
-            <button class=" p-1 " type="submit"><i class="dark:text-white text-black fa fa-search  fa-xl"></i></button>
-        </form>
-    </div>
-   
-    <li class="dark:text-white text-xl navitem">Login</li>
-    <li class="dark:text-white btn-primary text-xl       navitem">Register</li>
-    </ul>
-   </div>
-</div>
-</div>
-
-<!-- Navbar ends here -->
-<!-- Navbar ends here -->
-<!-- Navbar ends here -->
-<!-- Navbar ends here -->
-<!-- Navbar ends here -->
-
-
-
-<!-- landingpage starts here -->
-<div class="landing-page flex flex-col sm:flex-col md:flex-row sm:h-[80vh] lg:h-[85vh] justify-evenly items-center mob:text-center mob:h-[100vh] scr-fix:text-center scr-fix:h-[100vh]">
-
-<div class="my-info-container">
-
-    <div class="info-heading">
-        <h1 style="font-family: 'Poppins', sans-serif; font-weight : 700" class="info-header dark:text-white text-4xl lg:text-6xl">Hi Kind People of The Internet</h1>
-        <!-- <br> -->
-        <p class="dark:text-white mt-2 text-xl">Me - Aedash , Welcome To My Blog</p>
-        <button class="btn-p mt-2 text-xl">Explore</button>
-    </div>
-
-
-</div>
-<div class="svg-container">
-
-<img class = "fill-white  w-[300px] sm:w-[400px] md:w-[400px] lg:w-[500px] h-auto"  src="../images/landing-animate.svg"  alt="">
-
-</div>
-</div>
-</div>
-
-<!-- landing page ends here  -->
-<!-- landing page ends here  -->
-<!-- landing page ends here  -->
-<!-- landing page ends here  -->
-
-<br>
-
-
-<div class="blog-container max-w-[1200px] m-auto">
-    <h1 class="text-center mb-6 text-3xl text-black dark:text-white">Blog Posts</h1>
-    <header class="p-4  dark:text-gray-100">
-       <div class="container flex justify-between h-16 mx-auto">
-           <div class="flex">
-           
-               <ul class="items-stretch hidden space-x-3 lg:flex">
-                   <li class="flex">
-                       <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Link</a>
-                   </li>
-                   <li class="flex">
-                       <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400">Link</a>
-                   </li>
-                   <li class="flex">
-                       <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Link</a>
-                   </li>
-                   <li class="flex">
-                       <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Link</a>
-                   </li>
-               </ul>
-           </div>
-       
-       
-       </div>
-    </header>    
-    <br>  
-    <section class="flex flex-col justify-center antialiased  dark:text-white text-black  min-h-[200px]  ">
-        <div class="max-w-6xl mx-auto p-4 sm:px-6 h-full dark:bg-[rgba(24,27,58,0.36)] rounded-[20px] mb-4">
-            <!-- Blog post -->
-            <article class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
-                <a class="block group" href="#0">
-                 
-                        <img class=" w-full h-full object-cover " src="https://preview.cruip.com/open-pro/images/blog-post-01.jpg" width="540" height="303" alt="Blog post">
-                    </figure>
-                </a>
-                <div>
-                    <header>
-                        <div class="mb-3">
-                            <ul class="flex flex-wrap text-xs font-medium -m-1">
-                                <li class="m-1">
-                                    <a class="inline-flex text-center text-black p-1 text-md rounded-full btn-primary  transition duration-150 ease-in-out" href="#0">Product</a>
-                                </li>
-                                <li class="m-1">
-                                    <a class="inline-flex p-1 text-md text-center text-gray-100 py-1 px-3 rounded-full btn-primary transition duration-150 ease-in-out" href="#0">Engineering</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
-                            <a class="hover:text-gray-100 transition duration-150 ease-in-out" href="#0">Starting a django project</a>
-                        </h3>
-                    </header>
-                    <p class="text-lg text-gray-400 flex-grow">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.</p>
-             
-                </div>
-            </article>    
-      
+          </form>
         </div>
-        
-        <div class="max-w-6xl mx-auto p-4 sm:px-6 h-full dark:bg-[rgba(24,27,58,0.36)] rounded-[20px]">
-            <!-- Blog post -->
-            <article class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
-                <a class="block group" href="#0">
-                 <div class="w-[100%] h-[300px]">
-                        <img class="object-cover h-[100%] w-[100%] " src="https://img.freepik.com/premium-vector/back-school_118813-4086.jpg"  alt="Blog post">
-                    </div>
-                    </figure>
-                </a>
-                <div>
-                    <header>
-                        <div class="mb-3">
-                            <ul class="flex flex-wrap text-xs font-medium -m-1">
-                                <li class="m-1">
-                                    <a class="inline-flex text-center text-black p-1 text-md rounded-full btn-primary  transition duration-150 ease-in-out" href="#0">Product</a>
-                                </li>
-                                <li class="m-1">
-                                    <a class="inline-flex p-1 text-md text-center text-black dark:text-white py-1 px-3 rounded-full btn-primary transition duration-150 ease-in-out" href="#0">Engineering</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
-                            <a class="hover:text-gray-100 transition duration-150 ease-in-out" href="#0">Python: List Comprehensions</a>
-                        </h3>
-                    </header>
-                    <p class="text-lg text-gray-400 flex-grow">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.</p>
-             
-                </div>
-            </article>    
-            <br>
+        <div class="flex-1">
+          <ul class="pt-2 pb-4 space-y-1 text-sm">
+            <li class="rounded-sm">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                class="flex items-center p-2 space-x-3 rounded-md"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  class="w-5 h-5 fill-current stroke-black dark:stroke-gray-300"
+                >
+                  <path
+                    d="M469.666,216.45,271.078,33.749a34,34,0,0,0-47.062.98L41.373,217.373,32,226.745V496H208V328h96V496H480V225.958ZM248.038,56.771c.282,0,.108.061-.013.18C247.9,56.832,247.756,56.771,248.038,56.771ZM448,464H336V328a32,32,0,0,0-32-32H208a32,32,0,0,0-32,32V464H64V240L248.038,57.356c.013-.012.014-.023.024-.035L448,240Z"
+                  ></path>
+                </svg>
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="rounded-sm">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                class="flex items-center p-2 space-x-3 rounded-md"
+              >
+                <svg
+                  class="stroke-black dark:stroke-gray-300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#ffffff"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <span>About</span>
+              </a>
+            </li>
+            <li class="rounded-sm">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                class="flex items-center p-2 space-x-3 rounded-md"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="stroke-black dark:stroke-gray-300"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z"
+                  />
+                  <path d="M14 3v5h5M16 13H8M16 17H8M10 9H8" />
+                </svg>
+                <span>Register</span>
+              </a>
+            </li>
+
+            <li class="rounded-sm">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                class="flex items-center p-2 space-x-3 rounded-md"
+              >
+                <svg
+                  class="stroke-black dark:stroke-gray-300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3"
+                  />
+                </svg>
+                <span>Login</span>
+              </a>
+            </li>
+
+            <li class="rounded-sm">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                class="flex items-center p-2 space-x-3 rounded-md"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  class="w-5 h-5 fill-current stroke-black dark:stroke-gray-300"
+                >
+                  <path
+                    d="M440,424V88H352V13.005L88,58.522V424H16v32h86.9L352,490.358V120h56V456h88V424ZM320,453.642,120,426.056V85.478L320,51Z"
+                  ></path>
+                  <rect width="32" height="64" x="256" y="232"></rect>
+                </svg>
+                <span>Logout</span>
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="max-w-6xl mx-auto p-4 sm:px-6 h-full dark:bg-[rgba(24,27,58,0.36)] rounded-[20px]">
-            <!-- Blog post -->
-            <article class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
-                <a class="block group" href="#0">
-                 <div class="w-[100%] h-[300px]">
-                        <img class="object-cover h-[100%] w-[100%] " src="https://img.freepik.com/free-vector/flat-design-back-school-timetable_23-2148593567.jpg?w=1060&t=st=1659243805~exp=1659244405~hmac=14b7e823b8ffc3022d7facf1667950293c5ed3b801375e9a109f699fa97a46c6"  alt="Blog post">
-                    </div>
-                    </figure>
-                </a>
-                <div>
-                    <header>
-                        <div class="mb-3">
-                            <ul class="flex flex-wrap text-xs font-medium -m-1">
-                                <li class="m-1">
-                                    <a class="inline-flex text-center text-black p-1 text-md rounded-full btn-primary  transition duration-150 ease-in-out" href="#0">Product</a>
-                                </li>
-                                <li class="m-1">
-                                    <a class="inline-flex p-1 text-md text-center text-gray-100 py-1 px-3 rounded-full btn-primary transition duration-150 ease-in-out" href="#0">Engineering</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
-                            <a class="hover:text-gray-100 transition duration-150 ease-in-out" href="#0">Python: List Comprehensions</a>
-                        </h3>
-                    </header>
-                    <p class="text-lg text-gray-400 flex-grow">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.</p>
-             
-                </div>
-            </article>    
-            <br>
+      </div>
+      <div class="flex items-center p-2 mt-12 space-x-4 justify-self-end">
+        <img
+          src="https://source.unsplash.com/100x100/?portrait"
+          alt=""
+          class="w-12 h-12 rounded-lg dark:bg-gray-500"
+        />
+        <div>
+          <h2 class="text-lg font-semibold">Leroy Jenkins</h2>
         </div>
-
-
-  
-  </div>
-
-
-</div>
-
-</div>
-<div class="flex justify-center items-center mt-6 ">
-	<span class="text-black dark:text-white block">Page 2 of 4 <span class="mr-3"></span></span>
-	<div class="space-x-1">
-		<button title="previous" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow">
-			<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4 text-black dark:text-white">
-				<polyline points="15 18 9 12 15 6"></polyline>
-			</svg>
-		</button>
-		<button title="next" type="button" class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow">
-			<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4 text-black dark:text-white">
-				<polyline points="9 18 15 12 9 6"></polyline>
-			</svg>
-		</button>
-	</div>
-</div>
-<!-- footer -->
-<br>
-<footer class="text-center text-white" ">
-    <div class="flex justify-center items-center p-3 dark:bg-slate-800 bg-slate-100 ">
-      
-      
-  
-   
-     
       </div>
     </div>
-  
-    <div class="text-black dark:text-white text-center p-4 bg-slate-100 dark:bg-slate-800" >
-      © 2021 Copyright:
-      <a class="text-black dark:text-white" href="https://tailwind-elements.com/">Aedash.py</a>
-    </div>
-  </footer>
-  
-<script src="https://kit.fontawesome.com/f515549239.js" crossorigin="anonymous"></script>
 
-<script src="./script.js" ></script>
-</body>
+    <!-- sidebar end -->
+    <!-- sidebar end -->
+    <!-- sidebar end -->
+    <!-- sidebar end -->
+    <!-- sidebar end -->
+    <div class="nav-container h-auto">
+      <div class="max-w-[90%] lg:max-w-[80%] m-auto">
+        <!-- Navbar starts here!!!! -->
+        <!-- Navbar starts here!!!! -->
+        <!-- Navbar starts here!!!! -->
+        <!-- Navbar starts here!!!! -->
+        <!-- Navbar starts here!!!! -->
+        <div class=" ">
+          <div
+            class="pt-5 pb-5 navbar flex flex-row justify-between items-center m-auto"
+          >
+            <div class="logo-bars flex flex-row items-center justify-start">
+              <p class="dark:text-white nav-item toggle">
+                <i class="fa fa-bars fa-2xl"></i>
+              </p>
+              <p
+                style="font-family: 'Arvo', serif"
+                class="dark:text-white text-3xl nav-item ml-5 border-2 border-black dark:border-white text-green-400 p-1 logo"
+              >
+                Aedash
+              </p>
+
+              <p class="dark:text-white sun toggler nav-item ml-5">
+                <i class="fa-solid fa-sun fa-xl"></i>
+              </p>
+              <p class="dark:text-white moon nav-item ml-5">
+                <i class="fa-regular fa-moon fa-xl"></i>
+              </p>
+            </div>
+            <div class="navlists flex flex-row justify-start items-center">
+              <p class="dark:text-white nav-item search-h search-toggle">
+                <i class="fa fa-search fa-xl"></i>
+              </p>
+              <div class=" border-2 border-green-300 rounded form-elem">
+                <form class="search-form selection:hidden" action="">
+                  <input
+                    id="search_here"
+                    placeholder="Search"
+                    class="search_item focus:outline-none border-2 rounded-md border-none bg-transparent text-black dark:text-white w-[200px]"
+                    type="text"
+                  />
+                  <button class="p-1" type="submit">
+                    <i
+                      class="dark:text-white text-black fa fa-search fa-xl"
+                    ></i>
+                  </button>
+                </form>
+       
+              </div>
+
+              <li class="dark:text-white text-xl navitem">Login</li>
+              <li class="dark:text-white btn-primary text-xl navitem">
+                Register
+              </li>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navbar ends here -->
+        <!-- Navbar ends here -->
+        <!-- Navbar ends here -->
+        <!-- Navbar ends here -->
+        <!-- Navbar ends here -->
+
+        <!-- landingpage starts here -->
+
+
+        <!-- Search result -->
+        <div
+        class="s-results s-result-sidebar absolute top-[10%] mob:[top:5%] left-[10%] sm:left-[20%] md:left-[30%] lg:left-[35%] w-[400px] m-auto bg-slate-700 dark:bg-slate-700 h-auto rounded-lg flex flex-col justify-center items-start z-10"
+      
+      ></div>
+        <div
+          class="landing-page flex flex-col sm:flex-col md:flex-row sm:h-[80vh] lg:h-[85vh] justify-evenly items-center mob:text-center mob:h-[100vh] scr-fix:text-center scr-fix:h-[100vh]"
+        >
+          <div class="my-info-container">
+            <div class="info-heading">
+              <h1
+                style="font-family: 'Poppins', sans-serif; font-weight: 700"
+                class="info-header dark:text-white text-4xl lg:text-6xl"
+              >
+                Hi Kind People of The Internet
+              </h1>
+              <!-- <br> -->
+              <p class="dark:text-white mt-2 text-xl">
+                Me - Aedash , Welcome To My Blog
+              </p>
+              <button class="btn-p mt-2 text-xl">Explore</button>
+            </div>
+          </div>
+          <div class="svg-container">
+            <img
+              class="fill-white w-[300px] sm:w-[400px] md:w-[400px] lg:w-[500px] h-auto"
+              src="../images/landing-animate.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- landing page ends here  -->
+      <!-- landing page ends here  -->
+      <!-- landing page ends here  -->
+      <!-- landing page ends here  -->
+
+      <br />
+
+      <div class="blog-container max-w-[1200px] m-auto">
+        <h1 class="text-center mb-6 text-3xl text-black dark:text-white">
+          Blog Posts
+        </h1>
+        <header class="p-4 dark:text-gray-100">
+          <div class="container flex justify-between h-16 mx-auto">
+            <div class="flex">
+              <ul class="items-stretch hidden space-x-3 lg:flex">
+                <li class="flex">
+                  <a
+                    rel="noopener noreferrer"
+                    href="#"
+                    class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+                    >Link</a
+                  >
+                </li>
+                <li class="flex">
+                  <a
+                    rel="noopener noreferrer"
+                    href="#"
+                    class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+                    >Link</a
+                  >
+                </li>
+                <li class="flex">
+                  <a
+                    rel="noopener noreferrer"
+                    href="#"
+                    class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+                    >Link</a
+                  >
+                </li>
+                <li class="flex">
+                  <a
+                    rel="noopener noreferrer"
+                    href="#"
+                    class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent"
+                    >Link</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
+        <br />
+        <section
+          class="flex flex-col justify-center antialiased dark:text-white text-black min-h-[200px]"
+        >
+          <div
+            class="max-w-6xl mx-auto p-4 sm:px-6 h-full dark:bg-[rgba(24,27,58,0.36)] rounded-[20px] mb-4"
+          >
+            <!-- Blog post -->
+            <article
+              class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center"
+            >
+              <a class="block group" href="#0">
+                <img
+                  class="w-full h-full object-cover"
+                  src="https://preview.cruip.com/open-pro/images/blog-post-01.jpg"
+                  width="540"
+                  height="303"
+                  alt="Blog post"
+                />
+              </a>
+              <div>
+                <header>
+                  <div class="mb-3">
+                    <ul class="flex flex-wrap text-xs font-medium -m-1">
+                      <li class="m-1">
+                        <a
+                          class="inline-flex text-center text-black p-1 text-md rounded-full btn-primary transition duration-150 ease-in-out"
+                          href="#0"
+                          >Product</a
+                        >
+                      </li>
+                      <li class="m-1">
+                        <a
+                          class="inline-flex p-1 text-md text-center text-gray-100 py-1 px-3 rounded-full btn-primary transition duration-150 ease-in-out"
+                          href="#0"
+                          >Engineering</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
+                    <a
+                      class="hover:text-gray-100 transition duration-150 ease-in-out"
+                      href="#0"
+                      >Starting a django project</a
+                    >
+                  </h3>
+                </header>
+                <p class="text-lg text-gray-400 flex-grow">
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                  occaecat cupidatat.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div
+            class="max-w-6xl mx-auto p-4 sm:px-6 h-full dark:bg-[rgba(24,27,58,0.36)] rounded-[20px]"
+          >
+            <!-- Blog post -->
+            <article
+              class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center"
+            >
+              <a class="block group" href="#0">
+                <div class="w-[100%] h-[300px]">
+                  <img
+                    class="object-cover h-[100%] w-[100%]"
+                    src="https://img.freepik.com/premium-vector/back-school_118813-4086.jpg"
+                    alt="Blog post"
+                  />
+                </div>
+              </a>
+              <div>
+                <header>
+                  <div class="mb-3">
+                    <ul class="flex flex-wrap text-xs font-medium -m-1">
+                      <li class="m-1">
+                        <a
+                          class="inline-flex text-center text-black p-1 text-md rounded-full btn-primary transition duration-150 ease-in-out"
+                          href="#0"
+                          >Product</a
+                        >
+                      </li>
+                      <li class="m-1">
+                        <a
+                          class="inline-flex p-1 text-md text-center text-black dark:text-white py-1 px-3 rounded-full btn-primary transition duration-150 ease-in-out"
+                          href="#0"
+                          >Engineering</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
+                    <a
+                      class="hover:text-gray-100 transition duration-150 ease-in-out"
+                      href="#0"
+                      >Python: List Comprehensions</a
+                    >
+                  </h3>
+                </header>
+                <p class="text-lg text-gray-400 flex-grow">
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                  occaecat cupidatat.
+                </p>
+              </div>
+            </article>
+            <br />
+          </div>
+          <div
+            class="max-w-6xl mx-auto p-4 sm:px-6 h-full dark:bg-[rgba(24,27,58,0.36)] rounded-[20px]"
+          >
+            <!-- Blog post -->
+            <article
+              class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center"
+            >
+              <a class="block group" href="#0">
+                <div class="w-[100%] h-[300px]">
+                  <img
+                    class="object-cover h-[100%] w-[100%]"
+                    src="https://img.freepik.com/free-vector/flat-design-back-school-timetable_23-2148593567.jpg?w=1060&t=st=1659243805~exp=1659244405~hmac=14b7e823b8ffc3022d7facf1667950293c5ed3b801375e9a109f699fa97a46c6"
+                    alt="Blog post"
+                  />
+                </div>
+              </a>
+              <div>
+                <header>
+                  <div class="mb-3">
+                    <ul class="flex flex-wrap text-xs font-medium -m-1">
+                      <li class="m-1">
+                        <a
+                          class="inline-flex text-center text-black p-1 text-md rounded-full btn-primary transition duration-150 ease-in-out"
+                          href="#0"
+                          >Product</a
+                        >
+                      </li>
+                      <li class="m-1">
+                        <a
+                          class="inline-flex p-1 text-md text-center text-gray-100 py-1 px-3 rounded-full btn-primary transition duration-150 ease-in-out"
+                          href="#0"
+                          >Engineering</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
+                    <a
+                      class="hover:text-gray-100 transition duration-150 ease-in-out"
+                      href="#0"
+                      >Python: List Comprehensions</a
+                    >
+                  </h3>
+                </header>
+                <p class="text-lg text-gray-400 flex-grow">
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                  occaecat cupidatat.
+                </p>
+              </div>
+            </article>
+            <br />
+          </div>
+
+          <div class="flex justify-center items-center mt-6">
+            <span class="text-black dark:text-white block"
+              >Page 2 of 4 <span class="mr-3"></span
+            ></span>
+            <div class="space-x-1">
+              <button
+                title="previous"
+                type="button"
+                class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-4 text-black dark:text-white"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button
+                title="next"
+                type="button"
+                class="inline-flex items-center justify-center w-8 h-8 py-0 border rounded-md shadow"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-4 text-black dark:text-white"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <!-- footer -->
+          <br />
+          <footer class="text-center text-white" ">
+          <div
+            class="flex justify-center items-center p-3 dark:bg-slate-800 bg-slate-100"
+          ></div>
+
+          <div
+            class="text-black dark:text-white text-center p-4 bg-slate-100 dark:bg-slate-800"
+          >
+            © 2021 Copyright:
+            <a
+              class="text-black dark:text-white"
+              href="https://tailwind-elements.com/"
+              >Aedash.py</a
+            >
+          </div>
+
+          <script
+            src="https://kit.fontawesome.com/f515549239.js"
+            crossorigin="anonymous"
+          ></script>
+
+       
+          <script src="./script.js"></script>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>

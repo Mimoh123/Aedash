@@ -17,7 +17,13 @@
   <div class="my-info-container">
   
       <div class="info-heading">
-          <h1 style="font-family: 'Poppins', sans-serif; font-weight : 700" class="info-header dark:text-white text-4xl lg:text-6xl">Hi Kind People of The Internet</h1>
+          <h1 style="font-family: 'Poppins', sans-serif; font-weight : 700" class="info-header dark:text-white text-4xl lg:text-6xl">
+            {% if user.is_authenticated %}
+                Hi, {{user | capfirst}}, Welcome
+            {% else %}
+            Hi Kind People of The Internet
+            {% endif %}
+           </h1>
           <!-- <br> -->
           <p class="dark:text-white mt-2 text-xl">Me - Aedash , Welcome To My Blog</p>
           <button class="btn-p mt-2 text-xl">Explore</button>
@@ -42,24 +48,31 @@
   
   
   <div class="blog-container max-w-[1200px] m-auto">
-      <h1 class="text-center mb-6 text-3xl text-black dark:text-white">Blog Posts</h1>
+      <h1 class="text-center mb-6 text-3xl text-black dark:text-white">Blog Posts 
+        {% if tag %}
+            for {{tag}}
+        {% endif %}
+      </h1>
       <header class="p-4  dark:text-gray-100">
          <div class="container flex justify-between h-16 mx-auto">
              <div class="flex">
              
                  <ul class="items-stretch hidden space-x-3 lg:flex">
-                     <li class="flex">
-                         <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Link</a>
-                     </li>
-                     <li class="flex">
-                         <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400">Link</a>
-                     </li>
-                     <li class="flex">
-                         <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Link</a>
-                     </li>
-                     <li class="flex">
-                         <a rel="noopener noreferrer" href="#" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Link</a>
-                     </li>
+                  
+                    <li class="flex " id = 'tag-place'>
+                        <a rel="noopener noreferrer" href="{% url 'index'  %}#tag-place" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent tag-btn ">All</a>
+                    </li>
+                    <select class ="block p-2 mb-2 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onChange="window.location.href=this.value" id="cars">
+                        {% for tag in tags %}
+<!--                         
+                        <option  class="flex " id = 'tag-place'> -->
+                            <option rel="noopener noreferrer" value="{% url 'post_list_by_tag' tag.slug %}#tag-place" class="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent tag-btn ">{{ tag | capfirst }}</option>
+                        <!-- </option> -->
+                        {% endfor %}
+                      </select>
+   
+                  
+                  
                  </ul>
              </div>
          
@@ -70,39 +83,59 @@
       <section class="flex flex-col justify-center antialiased  dark:text-white text-black  min-h-[200px]  ">
         <!-- Blog post -->
         {% for post in posts %}
-          
+
         
-          <div class="max-w-6xl mx-auto p-4 sm:px-6 h-full dark:bg-[rgba(24,27,58,0.36)] rounded-[20px] mb-4 " id = 'paginate_dir'>
+          <div class="max-w-6xl mx-auto p-4 sm:px-6 h-full bg-white dark:bg-[rgba(24,27,58,0.36)] rounded-[20px] mb-4 " id = 'paginate_dir'>
               
               <article class="max-w-sm mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center">
                   <a class="block group" href="#0">
-                   
-                          <img class=" w-full h-full object-cover " src="https://preview.cruip.com/open-pro/images/blog-post-01.jpg" width="540" height="303" alt="Blog post">
+                   {% if post.image %}
+                          <img class="w-full h-full object-cover" src="{{ post.image.url }}" width="540" height=303 alt="Blog post">
+                    {% else %}
+                        <img class=" w-full h-full object-cover " src="{% static 'img/default.png' %}" width="540" height="303" alt="Blog post">
+
+                          {% endif %}
                       </figure>
                   </a>
                   <div>
                       <header>
                           <div class="mb-3">
                               <ul class="flex flex-wrap text-xs font-medium -m-1">
+                                {% for tag in post.tags.all %}
+                                    
+                            
                                   <li class="m-1">
-                                      <a class="inline-flex text-center text-black p-1 text-md rounded-full btn-primary  transition duration-150 ease-in-out" href="#0">Product</a>
+                                      <p class="inline-flex text-center text-black p-1 text-md rounded-full btn-primary  transition duration-150 ease-in-out" >
+                                        {% if tag is none %}
+                                   Blog
+                                        {% else %}
+                                        {{ tag }}
+                                        {% endif %}
+                                    
+                                      </p>
                                   </li>
-                                  <li class="m-1">
-                                      <a class="inline-flex p-1 text-md text-center text-gray-100 py-1 px-3 rounded-full btn-primary transition duration-150 ease-in-out" href="#0">Engineering</a>
-                                  </li>
+                                  {% endfor %}
+                           
                               </ul>
                           </div>
                           <h3 class="text-2xl lg:text-3xl font-bold leading-tight mb-2">
                               <a class=" transition duration-150 ease-in-out" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                           </h3>
                       </header>
-                      <p class="text-lg text-gray-400 flex-grow"> {{ post.body| safe |truncatewords:20|linebreaks }}</p>
+                      {% if post.subtitle %}
+                      <p class="text-lg text-gray-400 flex-grow"> {{ post.subtitle| safe |truncatewords:50|linebreaks }}</p>
+                    {% else %}
+                    <p class="text-lg text-gray-400 flex-grow">Blog Post</p>
+                      {% endif %}
+                    
+                    
                
                   </div>
               </article>    
         
           </div>
           {% endfor %}
+        </section>
           <!-- keep upto this -->
           <!-- keep upto this -->
           <!-- keep upto this -->

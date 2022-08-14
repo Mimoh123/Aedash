@@ -1,4 +1,5 @@
 from telnetlib import STATUS
+from xml.dom import ValidationErr
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import redirect, render,get_object_or_404
 from django.http import HttpResponse
@@ -9,21 +10,29 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core import serializers
 from django.http import HttpResponse
 from django.http import JsonResponse
+from taggit.models import Tag
+from django.db.models import Q 
 
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 
 
 # from requests import request
 # Create your views here.
 
-def index(request):
+def index(request,tag_slug = None):
 
 
     
-    object_list = Post.objects.filter(status = 'published')
-    paginator = Paginator(object_list,3) # 3 posts in each page
+    object_list = Post.objects.filter(status  ='published')
+    tags = Tag.objects.all()
+    tag = None
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        object_list = object_list.filter(tags__in=[tag])
+    paginator = Paginator(object_list,5) # 3 posts in each page
     page = request.GET.get('page')
     try:
-        posts = paginator.page(page)
+        posts = paginator.page(page)    
     except PageNotAnInteger:
         #if the page is not an integer, deliver the first page
         posts = paginator.page(1)
@@ -32,7 +41,7 @@ def index(request):
         posts = paginator.page(paginator.num_pages)
     
     
-    return render(request,'core/index.html',{'posts':posts,'page':page,})
+    return render(request,'core/index.html',{'posts':posts,'page':page,"tag":tag,'tags':tags})
 
 
 #implementing authentication
@@ -51,18 +60,20 @@ def register(request):
             #save the User object
             new_user.save()
             return redirect('login')
-    else:
-        user_form = UserRegistrationForm()
-    return render(request,'registration/user_register.html',{'user_form':user_form})
+        else:
+            return render(request,'registration/user_register.html',{'user_form':user_form})
+        
+    else:  
+        user_form  = UserRegistrationForm()
+        return render(request,'registration/user_register.html',{'user_form':user_form})
 
 
 
 def post_detail(request,year,month,day,post):
     post = get_object_or_404(Post,slug= post,status='published',publish__year = year,publish__day = day)
-    feature = Post.objects.filter(featured = True)
+    feature = Post.objects.filter(featured = True)[:4]
     #comments which are active
-    comments = post.comments.filter(active = True)
-
+    comments = post.comments.filter(active= 'True')
     new_comment= None
     # path_to_
     if request.method == "POST":
@@ -87,5 +98,19 @@ def post_detail(request,year,month,day,post):
         {'post': post,'comments':comments,'new_comment':new_comment,'featured':feature})
         
 def search(request):
-    data = list(Post.objects.values())
-    return render(request,'base.html',{'data':data})
+    
+    results = []
+    query = None
+
+    if 'query' in request.GET:
+        query = request.GET['query']
+        results = Post.objects.filter(status = 'published').annotate(
+search=SearchVector('title', 'body','tags'),
+).filter(search=query).only('title','image','subtitle')[:3]
+
+        
+    
+    return render(request,'core/search.html',{'results':results,'query':query})
+    
+        
+            
