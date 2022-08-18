@@ -1,85 +1,95 @@
-{% extends "base.html" %}
-{% load static %}
-{% block title %}{{ post.title }}{% endblock %}
-
-{% block content %}
-</div>
+{% extends "base.html" %} {% load static %} {% block title %}{{ post.title }}{%
+endblock %} {% block content %} 
 <div class="lap:hidden">
-    <br>
-<br>
-<br>
-<br>    
+  <br />
+  <br />
+  <br />
+  <br />
 </div>
-<div class="blog-container max-w-[1100px] m-auto p-6    ">
-
-    <div class="post-flex-container flex flex-row ">
- 
-    <div class="content-container  w-[100%] ">
-     <!-- breadcrumbs  -->
-     <nav aria-label="breadcrumb" class="w-full mb-6 ">
+<div class="blog-container max-w-[1100px] m-auto p-6">
+  <div class="post-flex-container flex flex-row">
+    <div class="content-container w-[100%]">
+      <!-- breadcrumbs  -->
+      <nav aria-label="breadcrumb" class="w-full mb-6">
         <ol class="flex h-8 space-x-2 dark:text-gray-400">
-            <li class="flex items-center">
-                <a rel="noopener noreferrer" href="#" title="Back to homepage" class="flex items-center hover:underline">Home</a>
-            </li>
-        
-       
-            <li class="flex items-center space-x-1">
-                <p class="text-black dark:text-gray-400"> > {{ post.title }}</p>
-            </li>
-        </ol>
-    </nav>
-    <!-- breacrumb end -->
+          <li class="flex items-center">
+            <a
+              rel="noopener noreferrer"
+              href="#"
+              title="Back to homepage"
+              class="flex items-center hover:underline"
+              >Home</a
+            >
+          </li>
 
-    <div class="header-container ">
-        <p class="font-['Poppins','sans-serif'] dark:text-white md:text-4 md:text-4xl lg:text-5xl  break-words font-semibold sm:text-3xl text-2xl leading-8 mob:text-2xl hyphens-auto"  >
-       {{ post.title }}
-    </p>
-    </div>
-       <!-- author details and date -->
-       <nav aria-label="breadcrumb" class="w-full mob:mt-4 mt-6 ">
+          <li class="flex items-center space-x-1">
+            <p class="text-black dark:text-gray-400">> {{ post.title }}</p>
+          </li>
+        </ol>
+      </nav>
+      <!-- breacrumb end -->
+
+      <div class="header-container">
+        <p
+          class="font-['Poppins','sans-serif'] dark:text-white md:text-4 md:text-4xl lg:text-5xl break-words font-semibold sm:text-3xl text-2xl leading-8 mob:text-2xl hyphens-auto"
+        >
+          {{ post.title }}
+        </p>
+      </div>
+      <!-- author details and date -->
+      <nav aria-label="breadcrumb" class="w-full mob:mt-4 mt-6">
         <ol class="flex mob:h-4 h-8 space-x-2 dark:text-gray-100">
-            <li class="flex items-center">
-               <p class="mob:text-[13px]" >{{ post.created }}</p>
-            </li>
-        
-       
-            <li class="flex items-center space-x-1">
-              <p class="mob:text-[13px]" >By {{ post.author | capfirst}}</p>
-                    
-            </li>
-          
-            <li><button class="mob:px-1 btn-primary px-2  text-black  mob:text-[13px] dark:text-white">Share<i class="fa-solid fa-share fa-sm px-1"></i></button></li>
+          <li class="flex items-center">
+            <p class="mob:text-[13px]">{{ post.created }}</p>
+          </li>
+
+          <li class="flex items-center space-x-1">
+            <p class="mob:text-[13px]">By {{ post.author | capfirst}}</p>
+          </li>
+
+          <li>
+            <button
+              class="mob:px-1 btn-primary px-2 text-black mob:text-[13px] dark:text-white"
+            >
+              Share<i class="fa-solid fa-share fa-sm px-1"></i>
+            </button>
+          </li>
         </ol>
-    </nav>
-    <p class="mb-6"></p>
-<hr class="border-3  dark:border-white border-grey-900">
-<p class="mb-6"></p>
-<div class="w-[100%] md:h-[500px] border-2 dark:border-black p-1 my-3 " >
-    {% if post.image %}
-  
-    <img src="{{ post.image.url }}" class="  object-contain h-[100%] w-[100%]" alt="..." />
-    {% else %}
+      </nav>
+      <p class="mb-6"></p>
+      <hr class="border-3 dark:border-white border-grey-900" />
+      <p class="mb-6"></p>
+      <div class="w-[100%] md:h-[500px] border-2 dark:border-black p-1 my-3">
+        {% if post.image %}
 
-    <img src="{% static 'img/default.png' %}" class="  object-contain h-[100%] w-[100%]" alt="..." />
-    {% endif %}
-    
-  </div>    
-<div class="dark:text-white" >
-    {{ post.body | safe}}
-</div> 
-<br>
+        <img
+          src="{{ post.image.url }}"
+          class="object-contain h-[100%] w-[100%]"
+          alt="..."
+        />
+        {% else %}
 
-    <!-- <div class="text-content break-words hyphens-auto ">
+        <img
+          src="{% static 'img/default.png' %}"
+          class="object-contain h-[100%] w-[100%]"
+          alt="..."
+        />
+        {% endif %}
+      </div>
+      <div class="dark:text-white">{{ post.body | safe}}</div>
+      <br />
+
+      <!-- <div class="text-content break-words hyphens-auto ">
         <h1 class="text-2xl font-semibold dark:text-white text-black mb-6 mt-6" >This is a paragraph </h1>
         <p class="dark:text-white text-black  md:text-lg  leading-8  ">
         {{ post.title }} </p> -->
 
-<!-- 
+      <!-- 
 <div class="w-[100%] md:h-[500px] border-2 dark:border-black p-1 my-3 " >
             <img src="https://img.freepik.com/free-vector/criminal-tattoo-rose-hands-knife-bars-spider-skull-handcuffed-cage-wire-metal-chain-vector-illustration_1284-46130.jpg?w=740&t=st=1659246862~exp=1659247462~hmac=10f26daf9de391f9a210ebfc483b1905528801927a836c6923eba17bfb90a170" class="  object-contain h-[100%] w-[100%]" alt="..." />
           </div> -->
 
-<!-- 
+      <!-- 
         <h1 class="text-2xl font-semibold dark:text-white text-black mb-6 mt-6" >This is paragraph 2</h1>
         <p class="dark:text-white text-black  md:text-lg  leading-8 ">
         
@@ -90,22 +100,21 @@
 
        
     </div> -->
-   <br>
-    <hr class="border-3  dark:border-gray-600 border-grey-900">
-    <!-- component -->
-<!-- comment form -->
-{% with comment.count as total_comments %}
+      <br />
+      <hr class="border-3 dark:border-gray-600 border-grey-900" />
+      <!-- component -->
+      <!-- comment form -->
+      {% with comment.count as total_comments %}
     <h2 class="text-2xl mt-10 mb-10 dark:text-white ">
         {{ total_comments }} Comment {{ total_comments | pluralize }}
     </h2>
     {% endwith %}
 <div class="comment section w-[100%] flex flex-col  border-2 p-6 dark:border-gray-900 border-gray ">
-<!-- comment list -->
+
 
   <div class="comment-list">
     <br>
 
-    <!-- comment by start -->
     {% for comment in comments %}
     <div class="relative w-[75%] grid grid-cols-1 gap-4 p-4 mb-8 border rounded-lg dark:border-slate-600 bg-white dark:bg-slate-900 ">
       <div class="relative flex gap-4">
@@ -117,109 +126,98 @@
               </div>
               <p class="text-gray-400 text-sm dark:text-gray-900">  {{ comment.created }}</p>
           </div>
+      
       </div>    
+    
 
       <p class=" text-gray-500  dark:text-gray-"> {{ comment.body }}</p>
+      <form method = "post">
+        {% csrf_token %}
+        <input type="hidden" name = 'ParentSno' value = '{{ comment.id }}'>
+    
+
+        <textarea
+        class="bg-gray-100 dark:bg-gray-600 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-400 focus:outline-none focus:bg-white"
+        name="body"
+        placeholder="Reply Here"
+        required
+      ></textarea>
+        <input style="background : blue; padding: 10px" type="submit" value = 'Reply'>
+
+
+        <input type="hidden" value="{{user.username}}" name="uname" />
+        <input type="hidden" value="{{ user.email }}" name="email" />
+
+
+      </form>
   </div>
+  
   {% empty %}
   <p class="text-black dark:text-white">There are no comments yet.</p>
   {% endfor %}
 
-     <!-- comment by end -->
+ 
 
   </div>
-  <!-- commentbox -->
-  <div class="flex  max-w-lg">
- 
-    {% if new_comment %}
-    <h2>Your comment has been added.</h2>
-    {% else %}
-
-    {% if user.is_authenticated %}
-   <form class="w-full max-w-xl  rounded-lg  " method="post">
-    {% csrf_token %}
-      <div class="flex flex-wrap ">
-         <h2 class=" pb-2 text-gray-800 text-lg">Add a new comment</h2>
-         <div class="w-full md:w-full px-3 mb-2 mt-2">
-            <input type="hidden" value = "{{user.username}}"  name = "uname">
-            <input  type="hidden" value = "{{ user.email }}" name = 'email'>
-            <textarea class="bg-gray-100 dark:bg-gray-600 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-400 focus:outline-none focus:bg-white" name="body" placeholder='Type Your Comment' required></textarea>
-         </div>
-         <div class="w-full md:w-full flex items-start md:w-full px-3">
-            <div class="flex items-start w-1/2 text-gray-700 px-2 mr-auto">
-    
-              
+      <!-- commentbox -->
+      <div class="flex max-w-lg">
+        {% if new_comment %}
+        <h2>Your comment has been added.</h2>
+        {% else %} {% if user.is_authenticated %}
+        <form class="w-full max-w-xl rounded-lg" method="post">
+          {% csrf_token %}
+          <div class="flex flex-wrap">
+            <h2 class="pb-2 text-gray-800 text-lg">Add a new comment</h2>
+            <div class="w-full md:w-full px-3 mb-2 mt-2">
+              <input type="hidden" value="{{user.username}}" name="uname" />
+              <input type="hidden" value="{{ user.email }}" name="email" />
+              <textarea
+                class="bg-gray-100 dark:bg-gray-600 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-400 focus:outline-none focus:bg-white"
+                name="body"
+                placeholder="Type Your Comment"
+                required
+              ></textarea>
             </div>
-      
-            <div class="-mr-1 mt-3">
-               <input type='submit' class="btn-primary p-2 " value='Post Comment'>
+            <div class="w-full md:w-full flex items-start md:w-full px-3">
+              <div
+                class="flex items-start w-1/2 text-gray-700 px-2 mr-auto"
+              ></div>
+
+              <div class="-mr-1 mt-3">
+                <input
+                  type="submit"
+                  class="btn-primary p-2"
+                  value="Post Comment"
+                />
+              </div>
             </div>
-         </div>
-      </form>
-      {% else %}
-      <p class=" md:text-xl text-black dark:text-white">Please  <a class="btn-primary px-3 " href="{% url 'login' %}?next={{ post.get_absolute_url }}">login</a>    to comment</p>
-         
-    {% endif %}
-    
-    {% endif %} 
-   </div>
-</div>
 
-<!-- comment end -->
-   {% include 'core/featured.html' %}
-</div>
+            {% else %}
+            <p class="md:text-xl text-black dark:text-white">
+              Please
+              <a
+                class="btn-primary px-3"
+                href="{% url 'login' %}?next={{ post.get_absolute_url }}"
+                >login</a
+              >
+              to comment
+            </p>
 
-<!-- <div class="sidebar  w-[400px] h-[200px] bg-pink-300">
-    this is the sidebar
-</div> -->
-</div>
-</div>
-        </div>
-  
-          
-<!-- <h1>{{ post.title }}</h1>
-<p class="date text-purple-400">
-Published {{ post.publish }} by {{ post.author }}
-</p>
-{{ post.body|linebreaks }}
+            {% endif %} {% endif %}
+          </div>
+        </form>
+      </div>
 
-{% with comment.count as total_comments %}
-<h2>
-    {{ total_comments }} comment {{ total_comments | pluralize }}
-</h2>
-{% endwith %}
-
-{% for comment in comments %}
-<div class="comment">
-    <p class="info">
-
-    Comment {{ forloop.counter }} by {{ comment.name }}
-    {{ comment.created }}
-    </p>        
-    {{ comment.body|linebreaks }}
+      {% include 'core/featured.html' %}
     </div>
-    {% empty %}
-    <p>There are no comments yet.</p>
-    {% endfor %}
-{% if new_comment %}
-<h2>Your comment has been added.</h2>
-{% else %}
-<h2>Add a new comment</h2>
-{% if user.is_authenticated %}
-<form method="post">
-    {% csrf_token %}
-    <input type="textarea" name = "body">
-    <input type="hidden" value = "{{user.username}}"  name = "uname">
-    <input  type="hidden" value = "{{ user.email }}" name = 'email'>
-    <p><input type="submit" value="Add comment"></p>
-    </form>
+  </div>
+</div>
+<script>
 
-        
-    {% else %}
-        <p>Pleas <a href="{% url 'login' %}?next={{ post.get_absolute_url }}">login</a> to comment</p>
 
-{% endif %}
 
-{% endif %} -->
-{% include 'core/footer.html' %}
+</script>
+{% include 'core/footer.html' %} 
+{% endblock content  %}
+
 {% endblock %}

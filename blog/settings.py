@@ -19,7 +19,8 @@ import environ
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -149,8 +150,8 @@ STATICFILES_DIRS = ((os.path.join(BASE_DIR, 'static')), )
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #smtp mail
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'gk7125690@gmail.com'
-EMAIL_HOST_PASSWORD ='ucrprbisizmopoju'
+EMAIL_HOST_USER = env('GMAIL')
+EMAIL_HOST_PASSWORD =env('GMAIL_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 

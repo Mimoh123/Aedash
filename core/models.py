@@ -60,6 +60,7 @@ class Comment(models.Model):
     #we can use this active feature to manually deactivate a comment
     active = models.BooleanField(default=True, null = True)
     featured = models.BooleanField(default = False, null = True)
+    parent = models.ForeignKey('self',on_delete=models.CASCADE, null = True)
 
     class Meta:
         ordering = ('created',)

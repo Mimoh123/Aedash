@@ -79,7 +79,7 @@
 
 <script>
     const data= '{{search}}';
-    console.log(data);
+    //console.log(data)
     const dt = JSON.parse(data.replace(/&#x27;/g,'"'));
     const d = JSON.stringify(dt)
  
@@ -114,18 +114,20 @@
    })
 
    const search_item = document.querySelectorAll('.search_item')
-   console.log(search_item);
+
    search_item.forEach(function(elem){
     elem.addEventListener('click',function(){
        
-        console.log(search_item);
+       
        })
    })
+
+
+
 </script>
 
 <script src="{% static 'css/script.js' %}"></script>
 {% block script %}
-    
 {% endblock script %}
 </body>
 </html>

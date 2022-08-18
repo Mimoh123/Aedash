@@ -12,6 +12,8 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from taggit.models import Tag
 from django.db.models import Q 
+from django.contrib.auth import views as auth_views
+from django.contrib.auth.signals import user_logged_in,user_logged_out  
 
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 
@@ -20,9 +22,6 @@ from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 # Create your views here.
 
 def index(request,tag_slug = None):
-
-
-    
     object_list = Post.objects.filter(status  ='published')
     tags = Tag.objects.all()
     tag = None
@@ -73,7 +72,7 @@ def post_detail(request,year,month,day,post):
     post = get_object_or_404(Post,slug= post,status='published',publish__year = year,publish__day = day)
     feature = Post.objects.filter(featured = True)[:4]
     #comments which are active
-    comments = post.comments.filter(active= 'True')
+    comments = post.comments.filter(active= 'True',parent = None)
     new_comment= None
     # path_to_
     if request.method == "POST":
@@ -81,7 +80,17 @@ def post_detail(request,year,month,day,post):
         username = request.POST['uname']
         email = request.POST['email']
         body = request.POST['body']
-        comment = Comment.objects.create(post = post,name = username,email= email,body = body)
+        postSno = request.POST['ParentSno']
+        parentSno = post.comments.get(id = postSno)
+        
+        if parentSno == "":
+            comment = Comment.objects.create(post = post,name = username,email= email,body = body)
+        else:
+            parent = post.comments.get(id=parentSno.id)
+            comment = Comment.objects.create(post = post,name = username,email= email,body = body,parent = parent)
+        #for reply check if the form has a hidden reply form 
+        #if he has hidden 'reply' set a boolean field in model which knows if the comment is reply or a main comment
+        
         comment.save()
         return HttpResponseRedirect(post.get_absolute_url())
             #Create comment object but don't save to the database yet
@@ -111,6 +120,3 @@ search=SearchVector('title', 'body','tags'),
         
     
     return render(request,'core/search.html',{'results':results,'query':query})
-    
-        
-            
