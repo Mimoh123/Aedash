@@ -12,7 +12,8 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from taggit.models import Tag
 from django.db.models import Q 
-from django.contrib.auth import views as auth_views
+from django.contrib.auth import views as auth_views 
+from django.contrib.auth import login
 from django.contrib.auth.signals import user_logged_in,user_logged_out  
 
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
@@ -58,7 +59,8 @@ def register(request):
             new_user.set_password(user_form.cleaned_data['password'])
             #save the User object
             new_user.save()
-            return redirect('login')
+            login(request,new_user)
+            return redirect('index')
         else:
             return render(request,'registration/user_register.html',{'user_form':user_form})
         
@@ -80,7 +82,7 @@ def post_detail(request,year,month,day,post):
         username = request.POST['uname']
         email = request.POST['email']
         body = request.POST['body']
-        postSno = request.POST['ParentSno']
+        postSno = request.POST.get('ParentSno', False)
         parentSno = post.comments.get(id = postSno)
         
         if parentSno == "":

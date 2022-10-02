@@ -16,13 +16,22 @@ z-index: 1000;
         .search-form {
             display:none;
         }
-      
+        /* .sidebar-container {
+            display : flex;
+           } */
+            
     }
     @media (min-width : 768px) {
         .search-h {
             display:none;
         }
-      
+        .toggle {
+            display :none;
+           }  
+           .sidebar-container {
+            display :none;
+        }
+     
     }
     @media (max-width : 500px) {
         .navitem {
@@ -35,6 +44,7 @@ z-index: 1000;
         font-size: 25px;
     
     }
+ 
     }
     
 .navitem{
@@ -43,6 +53,25 @@ z-index: 1000;
 li{
     list-style: none;
 }
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.756); /* Black background with opacity */
+    z-index: 4; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+
+
+
+
+
 .image {
     border: 2px solid pink;
     padding: 20px;

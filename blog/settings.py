@@ -15,8 +15,6 @@ import os
 import environ
 
 
-
-
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = "/"
@@ -36,42 +34,59 @@ SECRET_KEY = 'django-insecure-1%fpe*^vxu^t4&17bf7i!h@*(mcyh84ts(c)vnq(uklyit1q6j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
+
+    'django.contrib.admin',
+
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-   "debug_toolbar",
+    "debug_toolbar",
     'django.contrib.staticfiles',
     'core',
     'taggit',
+    'social_django',
+
+
+
 
 ]
-
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '708993489043-ng4jea7lasp521lu1mr4af6oelm65401.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = env('CLIENT_ID')
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = env('CLIENT_SECRET')
+SOCIAL_AUTH_LOGIN_ERROR_URL= '/'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-      "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
- 
+    'social_django.middleware.SocialAuthExceptionMiddleware',
+
 ]
 INTERNAL_IPS = [
     # ...
     "127.0.0.1",
     # ...
 ]
+# SOCIAL_AUTH_GOOGLE_OAUTH2_WHITELISTED_DOMAINS = ["http://127.0.0.1:8000/"]
 
 ROOT_URLCONF = 'blog.urls'
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    # 'account.authentication.EmailAuthBackend',
+    'social_core.backends.google.GoogleOAuth2',
+]
 
 TEMPLATES = [
     {
@@ -87,7 +102,7 @@ TEMPLATES = [
                 'core.cp.search',
             ],
         },
-    },  
+    },
 ]
 
 WSGI_APPLICATION = 'blog.wsgi.application'
@@ -97,13 +112,13 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-'default': {
-'ENGINE': 'django.db.backends.postgresql',
-'NAME': 'django',
-'USER': 'postgres',
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django',
+        'USER': 'postgres',
 
-'PASSWORD': env('PSGS'),
-}
+        'PASSWORD': env('PSGS'),
+    }
 }
 
 
@@ -148,17 +163,17 @@ STATICFILES_DIRS = ((os.path.join(BASE_DIR, 'static')), )
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-#smtp mail
+# smtp mail
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = env('GMAIL')
-EMAIL_HOST_PASSWORD =env('GMAIL_PASSWORD')
+EMAIL_HOST_PASSWORD = env('GMAIL_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-#seconds
+# seconds
 PASSWORD_RESET_TIMEOUT = 3600
-# STATIC_ROOT = 
+# STATIC_ROOT =
 
 AUTH_PASSWORD_VALIDATORS = []
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

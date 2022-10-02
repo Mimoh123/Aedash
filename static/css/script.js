@@ -69,5 +69,19 @@ themeCheck();
 //         console.log('done')
 //     })
 // })
+const toggler = document.querySelectorAll(".toggle");
+const sidebar = document.querySelector(".sidebar-container");
+const searchToggle = document.querySelector(".search-toggle");
+const sidebarSearch = document.querySelector(".sidebar-search");
+const foc_elem = document.querySelector(".focus");
 
+toggler.forEach((elem) => {
+  elem.addEventListener("click", () => {
+    sidebar.classList.toggle("hidden");
+  });
+});
+searchToggle.addEventListener("click", () => {
+  foc_elem.focus();
+  sidebar.classList.toggle("hidden");
+});
 

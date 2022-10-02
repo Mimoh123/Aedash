@@ -100,6 +100,7 @@ endblock %} {% block content %}
 
        
     </div> -->
+    {% include 'core/featured.html' %}
       <br />
       <hr class="border-3 dark:border-gray-600 border-grey-900" />
       <!-- component -->
@@ -109,6 +110,7 @@ endblock %} {% block content %}
         {{ total_comments }} Comment {{ total_comments | pluralize }}
     </h2>
     {% endwith %}
+  
 <div class="comment section w-[100%] flex flex-col  border-2 p-6 dark:border-gray-900 border-gray ">
 
 
@@ -169,6 +171,7 @@ endblock %} {% block content %}
           <div class="flex flex-wrap">
             <h2 class="pb-2 text-gray-800 text-lg">Add a new comment</h2>
             <div class="w-full md:w-full px-3 mb-2 mt-2">
+
               <input type="hidden" value="{{user.username}}" name="uname" />
               <input type="hidden" value="{{ user.email }}" name="email" />
               <textarea
@@ -208,7 +211,7 @@ endblock %} {% block content %}
         </form>
       </div>
 
-      {% include 'core/featured.html' %}
+
     </div>
   </div>
 </div>
