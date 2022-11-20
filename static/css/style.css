@@ -1557,12 +1557,12 @@ video {
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:stroke-gray-300 {
-  stroke: #d1d5db;
-}
-
 .dark .dark\:stroke-gray-100 {
   stroke: #f3f4f6;
+}
+
+.dark .dark\:stroke-gray-300 {
+  stroke: #d1d5db;
 }
 
 .dark .dark\:text-gray-100 {

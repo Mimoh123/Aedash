@@ -160,7 +160,6 @@ cython_debug/
 #.idea/
 
 
-blog_eng/
 
 #nnode gitignore
 # Logs
@@ -294,4 +293,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-.env
+#virtual environment
+blog_eng/
