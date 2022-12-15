@@ -65,7 +65,9 @@ script.onload=function(){
     contextmenu: 'link image imagetools table',
     skin: useDarkMode ? 'oxide-dark' : 'oxide',
     content_css: useDarkMode ? 'dark' : 'default',
+    keep_styles : true,
 
+    paste_retain_style_properties : true,
     style_formats: [
       {title: 'Image',  classes: 'image'},
     

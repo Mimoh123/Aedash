@@ -85,3 +85,62 @@ searchToggle.addEventListener("click", () => {
   sidebar.classList.toggle("hidden");
 });
 
+//Comment logic 
+
+const replyBtn = document.querySelectorAll(".reply-btn");
+const cancelBtn = document.querySelectorAll(".cancel-btn");
+const allReplies = document.querySelectorAll(".view-reply");
+const allRepliesBox = document.querySelector(".all-replies-box");
+
+const replyBox = document.querySelectorAll(".reply-form");
+
+replyBtn.forEach(function (elem) {
+  elem.addEventListener("click", function () {
+    // this.parentElement.lastElementChild.classList.remove('hidden')
+    this.nextElementSibling.firstElementChild.classList.remove("hidden");
+    elem.classList.add("hidden");
+    cancelBtn.forEach(function (elem1) {
+      elem1.classList.remove("hidden");
+    });
+  });
+});
+
+cancelBtn.forEach(function (elem3) {
+  elem3.addEventListener("click", function () {
+    // this.parentElement.lastElementChild.classList.add('hidden')
+    elem3.classList.add("hidden");
+    this.classList.add("hidden");
+    replyBox.forEach(function (elem4) {
+      elem4.classList.add("hidden");
+      replyBtn.forEach(function (elem) {
+        elem.classList.remove("hidden");
+      });
+    });
+
+    //this.parentElement.firstElementChild.classList.remove('hidden')
+
+    //Reply btn
+    this.parentElement.parentElement.parentElement.parentElement.parentElement.firstElementChild.classList.remove(
+      "hidden"
+    );
+  });
+});
+allReplies.forEach(function (elem) {
+  elem.addEventListener("click", function () {
+    console.log(elem.nextElementSibling);
+    elem.nextElementSibling.classList.toggle("hidden");
+  });
+});
+
+
+//Smooth scrolling behaviour
+//Index page
+// let anchor = document.querySelector(".scroll-anchor");
+
+function scrollerfromto(from,to){
+  document.querySelector(`.${from}`).addEventListener('click',function(){
+    document.querySelector(`.${to}`).scrollIntoView({ behavior: 'smooth', block: 'start'});
+  })
+}
+
+scrollerfromto('scroll-activate-btn','scroll-anchor');

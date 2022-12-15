@@ -22,6 +22,18 @@ DATABASES = {
 'PASSWORD': env('PSGS'),
 }
 ```
+## I am using Eleephant sql as DaaS
+```
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.postgresql',
+'NAME': 'username',
+'USER': 'username',
+'HOST' : ''
+'PASSWORD': env('PSGS'),
+}
+```
+
 
 ## Setting up **.env** file
 

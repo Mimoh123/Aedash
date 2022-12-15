@@ -1,2 +1,5 @@
 Ajax..
 https://dev.to/nikhilroy2/django-ajax-request-with-axios-and-vanilla-javascript-tutorial-37nh 
+
+
+pgadmin ; p@ssword

@@ -114,9 +114,9 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django',
-        'USER': 'postgres',
-
+        'NAME': 'blog_h4qb',
+        'USER': 'blog_h4qb_user',
+        'HOST' : 'dpg-cedjjdkgqg45hta8snd0-a.oregon-postgres.render.com',
         'PASSWORD': env('PSGS'),
     }
 }

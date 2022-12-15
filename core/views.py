@@ -17,7 +17,7 @@ from django.contrib.auth import login
 from django.contrib.auth.signals import user_logged_in,user_logged_out  
 
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
-
+from .templatetags import extras
 
 # from requests import request
 # Create your views here.
@@ -75,26 +75,42 @@ def post_detail(request,year,month,day,post):
     feature = Post.objects.filter(featured = True)[:4]
     #comments which are active
     comments = post.comments.filter(active= 'True',parent = None)
+    replies = post.comments.filter(active = 'True', parent__isnull = False).order_by('created')
+    # replyDict={}
+    # for reply in replies:
+    #     if reply.parent.id not in replyDict.keys():
+    #         replyDict[reply.parent.id]=[reply]
+    #     else:
+    #         replyDict[reply.parent.id].append(reply)
+    # print(replyDict)
     new_comment= None
     # path_to_
     if request.method == "POST":
         # A comment was posted
+        # User.socialaccount_set.filter(provider='google')[0].extra_data['picture']
         username = request.POST['uname']
         email = request.POST['email']
         body = request.POST['body']
-        postSno = request.POST.get('ParentSno', False)
-        parentSno = post.comments.get(id = postSno)
+        postSno = request.POST.get('ParentSno',False)
+        try:
+            parentSno = post.comments.get(id = postSno)
+        except Exception as e:
+            parentSno = ""
+            print(e)
         
         if parentSno == "":
+
             comment = Comment.objects.create(post = post,name = username,email= email,body = body)
+
         else:
             parent = post.comments.get(id=parentSno.id)
-            comment = Comment.objects.create(post = post,name = username,email= email,body = body,parent = parent)
+            comment = Comment.objects.create(post = post,name = username,email= email,body = body,parent = parent ,replyid = int(request.POST.get('ParentSno')))
         #for reply check if the form has a hidden reply form 
         #if he has hidden 'reply' set a boolean field in model which knows if the comment is reply or a main comment
         
         comment.save()
-        return HttpResponseRedirect(post.get_absolute_url())
+        
+        return HttpResponseRedirect(f'{post.get_absolute_url()}#comment-sec')
             #Create comment object but don't save to the database yet
             # new_comment = comment_form.save(commit=False)
             
@@ -103,11 +119,11 @@ def post_detail(request,year,month,day,post):
             
             #Save the comment to the database
             # new_comment.save()
-    
+
     return render(request,
         'core/post_detail.html',
-        {'post': post,'comments':comments,'new_comment':new_comment,'featured':feature})
-        
+        {'post': post,'comments':comments,'new_comment':new_comment,'featured':feature,'replies':replies})
+# implement recaptcha from this doc https://ordinarycoders.com/blog/article/recaptcha-django
 def search(request):
     
     results = []
